@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace Sprint6_Pellitero_Carles
@@ -100,11 +101,11 @@ namespace Sprint6_Pellitero_Carles
 
         }
 
-        private void turnback_Tick(object sender, EventArgs e)
-        {
-            backcount--;
-            lbtemps.Text = "Temps en milisegons: " + (backcount * 1000).ToString();
-        }
+        //private void turnback_Tick(object sender, EventArgs e)
+        //{
+        //    backcount--;
+        //    lbtemps.Text = "Temps en milisegons: " + (backcount * 1000).ToString();
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -124,11 +125,19 @@ namespace Sprint6_Pellitero_Carles
         {
             //Generar numeors aleatoris A1 - D5
             GeneradorA1D5();
-            System.Timers.Timer timer = new System.Timers.Timer();            
-            timer.Interval = 1000;
+            System.Timers.Timer timer = new System.Timers.Timer();
+            // Hook up the Elapsed event for the timer. 
+            timer.Elapsed += contar(); //AFEGIR FUNCIONS
+            timer.AutoReset = true;
+            timer.Enabled = true;
+
+
+            //timer.Stop();
+            //timer.Dispose();
+            //timer.Interval = 1000;
             //timer.Elapsed();
-            timer.Start();
-            lbtemps.Text = timer.ToString();
+            //timer.Start();
+            //lbtemps.Text = timer.ToString();
 
             int digit, randomInteger;
             randomInteger = RandomGenerator();
@@ -137,6 +146,15 @@ namespace Sprint6_Pellitero_Carles
             string passw = Password[digit].valors;
             lbCodiValid.Text = passw;
 
+
+        }
+
+        private ElapsedEventHandler contar()
+        {
+            backcount--;
+            lbtemps.Text = backcount.ToString();
+            throw new NotImplementedException();
+            //System.NotImplementedException: 'No se puede implementar el método o la operación.'
 
         }
 

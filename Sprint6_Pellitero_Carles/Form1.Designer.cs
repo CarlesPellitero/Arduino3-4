@@ -29,13 +29,11 @@ namespace Sprint6_Pellitero_Carles
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnContaEnrera = new System.Windows.Forms.Button();
             this.lbtemps = new System.Windows.Forms.Label();
             this.cbPorts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnComprovar = new System.Windows.Forms.Button();
-            this.turnback = new System.Windows.Forms.Timer(this.components);
             this.lbCodiValid = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnValidar = new System.Windows.Forms.Button();
@@ -92,11 +90,6 @@ namespace Sprint6_Pellitero_Carles
             this.btnComprovar.Text = "Connectar";
             this.btnComprovar.UseVisualStyleBackColor = true;
             this.btnComprovar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // turnback
-            // 
-            this.turnback.Interval = 1000;
-            this.turnback.Tick += new System.EventHandler(this.turnback_Tick);
             // 
             // lbCodiValid
             // 
@@ -165,7 +158,6 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.ComboBox cbPorts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnComprovar;
-        private System.Windows.Forms.Timer turnback;
         private System.Windows.Forms.Label lbCodiValid;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnValidar;
