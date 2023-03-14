@@ -1,0 +1,10 @@
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\bin\Debug\Sprint6_Pellitero_Carles.exe.config
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\bin\Debug\Sprint6_Pellitero_Carles.exe
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\bin\Debug\Sprint6_Pellitero_Carles.pdb
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.csproj.AssemblyReference.cache
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.Form1.resources
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.Properties.Resources.resources
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.csproj.GenerateResource.cache
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.csproj.CoreCompileInputs.cache
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.exe
+D:\2022.2023\M13\studio\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.pdb
