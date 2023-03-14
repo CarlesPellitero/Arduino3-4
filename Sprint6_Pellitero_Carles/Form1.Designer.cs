@@ -36,10 +36,10 @@ namespace Sprint6_Pellitero_Carles
             this.label2 = new System.Windows.Forms.Label();
             this.btnComprovar = new System.Windows.Forms.Button();
             this.turnback = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbCodiValid = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnValidar = new System.Windows.Forms.Button();
+            this.txtIntroduit = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,14 +98,14 @@ namespace Sprint6_Pellitero_Carles
             this.turnback.Interval = 1000;
             this.turnback.Tick += new System.EventHandler(this.turnback_Tick);
             // 
-            // label1
+            // lbCodiValid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(596, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "codi";
+            this.lbCodiValid.AutoSize = true;
+            this.lbCodiValid.Location = new System.Drawing.Point(614, 35);
+            this.lbCodiValid.Name = "lbCodiValid";
+            this.lbCodiValid.Size = new System.Drawing.Size(69, 17);
+            this.lbCodiValid.TabIndex = 5;
+            this.lbCodiValid.Text = "Codi valid";
             // 
             // groupBox1
             // 
@@ -118,30 +118,32 @@ namespace Sprint6_Pellitero_Carles
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // button1
+            // btnValidar
             // 
-            this.button1.Location = new System.Drawing.Point(587, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 49);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnValidar.Location = new System.Drawing.Point(604, 68);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(90, 49);
+            this.btnValidar.TabIndex = 7;
+            this.btnValidar.Text = "Validar";
+            this.btnValidar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtIntroduit
             // 
-            this.textBox1.Location = new System.Drawing.Point(557, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 22);
-            this.textBox1.TabIndex = 8;
+            this.txtIntroduit.Location = new System.Drawing.Point(567, 148);
+            this.txtIntroduit.Multiline = true;
+            this.txtIntroduit.Name = "txtIntroduit";
+            this.txtIntroduit.Size = new System.Drawing.Size(161, 48);
+            this.txtIntroduit.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 360);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(764, 360);
+            this.Controls.Add(this.txtIntroduit);
+            this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbCodiValid);
             this.Controls.Add(this.btnComprovar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbPorts);
@@ -164,10 +166,10 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnComprovar;
         private System.Windows.Forms.Timer turnback;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbCodiValid;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnValidar;
+        private System.Windows.Forms.TextBox txtIntroduit;
     }
 }
 

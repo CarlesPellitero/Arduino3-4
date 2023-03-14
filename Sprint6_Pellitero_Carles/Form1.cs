@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timer = System.Threading.Timer;
 
 namespace Sprint6_Pellitero_Carles
 {
@@ -51,15 +50,15 @@ namespace Sprint6_Pellitero_Carles
         {
             Queue<int> digits = new Queue<int>();
             ArrayList lletras = new ArrayList() { "A", "E", "I", "O", "U" };
-            ArrayList array = new ArrayList() { 1, 2, 3, 4, 5 }; ;
+            ArrayList array; 
             int digit, digitArray;
             
             for (int i = 0; i < 5; i++)
             {
-                
+                array = new ArrayList() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
                 int randomInteger = RandomGenerator();
 
-                for (int j = 0; j < 1; j++)
+                for (int j = 0; j < 6; j++)
                 {
                     Random random = new Random(randomInteger);
                     digit = random.Next(array.Count);
@@ -125,8 +124,19 @@ namespace Sprint6_Pellitero_Carles
         {
             //Generar numeors aleatoris A1 - D5
             GeneradorA1D5();
-            turnback = new Timer();
-            
+            System.Timers.Timer timer = new System.Timers.Timer();            
+            timer.Interval = 1000;
+            //timer.Elapsed();
+            timer.Start();
+            lbtemps.Text = timer.ToString();
+
+            int digit, randomInteger;
+            randomInteger = RandomGenerator();
+            Random random = new Random(randomInteger);
+            digit = random.Next(Password.Count);
+            string passw = Password[digit].valors;
+            lbCodiValid.Text = passw;
+
 
         }
 
