@@ -6,12 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Sprint6_Pellitero_Carles
 {
@@ -25,10 +27,14 @@ namespace Sprint6_Pellitero_Carles
         SerialPort portArduino;
         bool obert = false, selecionat = false;
         Thread thread;
-        int backcount = 30;
+        private int backcount = 30;
         RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
         string xifres;
+        Timer timer;
 
+        //
+        //private static System.Timers.Timer timer;
+        //
         public class password
         {
             public string lletra { get; set; }
@@ -101,11 +107,62 @@ namespace Sprint6_Pellitero_Carles
 
         }
 
-        //private void turnback_Tick(object sender, EventArgs e)
-        //{
-        //    backcount--;
-        //    lbtemps.Text = "Temps en milisegons: " + (backcount * 1000).ToString();
-        //}
+        private void turnback_Tick(object sender, EventArgs e)
+        {
+            
+            if (backcount == 0)
+            {
+                timer.Stop();
+                lbtemps.Text = "00:00";
+
+            }else if (backcount < 10)
+            {                
+                lbtemps.Text = "00:0" + backcount;
+                backcount--;
+            }
+            else
+            {
+                
+                lbtemps.Text = "00:" + backcount ; //+ (backcount * 1000).ToString()
+                backcount--;
+            }
+
+        }
+
+        private void Validar()
+        {
+            //El sistema indicarà si els 2 codis són iguals o no.
+            if (txtIntroduit.Text.Equals(lbCodiValid.Text))
+            {
+                MessageBox.Show("Correcta");
+                //OBRIRA FORM GENERARCODIQR
+            }
+        }
+
+        private void HILO()
+        {
+            while (portArduino.IsOpen)
+            {
+                try
+                {
+                    string valor = portArduino.ReadLine();
+
+                    if (valor == "#\r")
+                    {
+                        Validar();
+                        thread.Abort();
+                    }
+                    else
+                    {
+                        txtIntroduit.Text += valor;
+                    }
+                }
+                catch (Exception)
+                { }
+
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -123,22 +180,16 @@ namespace Sprint6_Pellitero_Carles
 
         private void btnContaEnrera_Click(object sender, EventArgs e)
         {
+            lbtemps.Visible = true;
             //Generar numeors aleatoris A1 - D5
             GeneradorA1D5();
-            System.Timers.Timer timer = new System.Timers.Timer();
-            // Hook up the Elapsed event for the timer. 
-            timer.Elapsed += contar(); //AFEGIR FUNCIONS
-            timer.AutoReset = true;
-            timer.Enabled = true;
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(turnback_Tick);
+            btnContaEnrera.Enabled = false;
 
 
-            //timer.Stop();
-            //timer.Dispose();
-            //timer.Interval = 1000;
-            //timer.Elapsed();
-            //timer.Start();
-            //lbtemps.Text = timer.ToString();
-
+            //Generarà el codi de 6 xifres aleatòries al PC
             int digit, randomInteger;
             randomInteger = RandomGenerator();
             Random random = new Random(randomInteger);
@@ -146,21 +197,17 @@ namespace Sprint6_Pellitero_Carles
             string passw = Password[digit].valors;
             lbCodiValid.Text = passw;
 
-
-        }
-
-        private ElapsedEventHandler contar()
-        {
-            backcount--;
-            lbtemps.Text = backcount.ToString();
-            throw new NotImplementedException();
-            //System.NotImplementedException: 'No se puede implementar el método o la operación.'
-
+            //Enviar al Arduino (missatge SA) comensa compta enrerra
+            portArduino.Write("SA\n");
+            //ILO PARA PODER RECORRER EL TXTBOX
+            thread = new Thread(HILO);
+            thread.Start();
+            timer.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            //groupBox1.Visible = true;
             if (!obert && selecionat)
             {
                 SeleccionarPort();
@@ -172,8 +219,7 @@ namespace Sprint6_Pellitero_Carles
                     string valor = portArduino.ReadLine();
                     if (valor == "ACK\r")
                     {
-                        lbtemps.Visible = true;
-                        btnContaEnrera.Visible = true;
+                        groupBox1.Visible = true;
                     }
                 }
             }
@@ -182,11 +228,11 @@ namespace Sprint6_Pellitero_Carles
                 if (portArduino != null)
                 {
                     portArduino.Close();
-                    btnComprovar.Text = "Connectar"; 
+                    btnComprovar.Text = "Connectar";
                     obert = false;
                     lbtemps.Visible = false;
                     btnContaEnrera.Visible = false;
-                    //thread.Abort();
+                    btnComprovar.Enabled = false;
                 }
 
             }

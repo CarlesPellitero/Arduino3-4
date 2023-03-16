@@ -30,12 +30,12 @@ namespace Sprint6_Pellitero_Carles
         private void InitializeComponent()
         {
             this.btnContaEnrera = new System.Windows.Forms.Button();
-            this.lbtemps = new System.Windows.Forms.Label();
             this.cbPorts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnComprovar = new System.Windows.Forms.Button();
             this.lbCodiValid = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbtemps = new System.Windows.Forms.Label();
             this.btnValidar = new System.Windows.Forms.Button();
             this.txtIntroduit = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -43,25 +43,13 @@ namespace Sprint6_Pellitero_Carles
             // 
             // btnContaEnrera
             // 
-            this.btnContaEnrera.Location = new System.Drawing.Point(85, 21);
+            this.btnContaEnrera.Location = new System.Drawing.Point(91, 21);
             this.btnContaEnrera.Name = "btnContaEnrera";
             this.btnContaEnrera.Size = new System.Drawing.Size(95, 61);
             this.btnContaEnrera.TabIndex = 0;
             this.btnContaEnrera.Text = "Iniciar";
             this.btnContaEnrera.UseVisualStyleBackColor = true;
-            this.btnContaEnrera.Visible = false;
             this.btnContaEnrera.Click += new System.EventHandler(this.btnContaEnrera_Click);
-            // 
-            // lbtemps
-            // 
-            this.lbtemps.AutoSize = true;
-            this.lbtemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtemps.Location = new System.Drawing.Point(68, 95);
-            this.lbtemps.Name = "lbtemps";
-            this.lbtemps.Size = new System.Drawing.Size(137, 17);
-            this.lbtemps.TabIndex = 1;
-            this.lbtemps.Text = "cuanta atras (00:00)";
-            this.lbtemps.Visible = false;
             // 
             // cbPorts
             // 
@@ -94,7 +82,7 @@ namespace Sprint6_Pellitero_Carles
             // lbCodiValid
             // 
             this.lbCodiValid.AutoSize = true;
-            this.lbCodiValid.Location = new System.Drawing.Point(614, 35);
+            this.lbCodiValid.Location = new System.Drawing.Point(671, 35);
             this.lbCodiValid.Name = "lbCodiValid";
             this.lbCodiValid.Size = new System.Drawing.Size(69, 17);
             this.lbCodiValid.TabIndex = 5;
@@ -102,18 +90,29 @@ namespace Sprint6_Pellitero_Carles
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnContaEnrera);
             this.groupBox1.Controls.Add(this.lbtemps);
-            this.groupBox1.Location = new System.Drawing.Point(296, 53);
+            this.groupBox1.Controls.Add(this.btnContaEnrera);
+            this.groupBox1.Location = new System.Drawing.Point(310, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 137);
+            this.groupBox1.Size = new System.Drawing.Size(279, 151);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Visible = false;
+            // 
+            // lbtemps
+            // 
+            this.lbtemps.AutoSize = true;
+            this.lbtemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtemps.Location = new System.Drawing.Point(119, 98);
+            this.lbtemps.Name = "lbtemps";
+            this.lbtemps.Size = new System.Drawing.Size(44, 17);
+            this.lbtemps.TabIndex = 2;
+            this.lbtemps.Text = "00:00";
+            this.lbtemps.Visible = false;
             // 
             // btnValidar
             // 
-            this.btnValidar.Location = new System.Drawing.Point(604, 68);
+            this.btnValidar.Location = new System.Drawing.Point(661, 68);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(90, 49);
             this.btnValidar.TabIndex = 7;
@@ -122,9 +121,10 @@ namespace Sprint6_Pellitero_Carles
             // 
             // txtIntroduit
             // 
-            this.txtIntroduit.Location = new System.Drawing.Point(567, 148);
+            this.txtIntroduit.Location = new System.Drawing.Point(624, 148);
             this.txtIntroduit.Multiline = true;
             this.txtIntroduit.Name = "txtIntroduit";
+            this.txtIntroduit.ReadOnly = true;
             this.txtIntroduit.Size = new System.Drawing.Size(161, 48);
             this.txtIntroduit.TabIndex = 8;
             // 
@@ -132,7 +132,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 360);
+            this.ClientSize = new System.Drawing.Size(827, 360);
             this.Controls.Add(this.txtIntroduit);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.groupBox1);
@@ -154,7 +154,6 @@ namespace Sprint6_Pellitero_Carles
         #endregion
 
         private System.Windows.Forms.Button btnContaEnrera;
-        private System.Windows.Forms.Label lbtemps;
         private System.Windows.Forms.ComboBox cbPorts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnComprovar;
@@ -162,6 +161,7 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.TextBox txtIntroduit;
+        private System.Windows.Forms.Label lbtemps;
     }
 }
 
