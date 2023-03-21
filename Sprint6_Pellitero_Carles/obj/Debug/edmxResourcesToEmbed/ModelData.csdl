@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DarkCoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminCoordinates">
+    <Key>
+      <PropertyRef Name="idCoordinate" />
+    </Key>
+    <Property Name="idCoordinate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Coordinate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ValueCoord" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContactSystem">
+    <Key>
+      <PropertyRef Name="IdSystem" />
+    </Key>
+    <Property Name="IdSystem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdContact" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SystemValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NewContact" Relationship="Self.FK_ContactSystem_NewContact" FromRole="ContactSystem" ToRole="NewContact" />
+  </EntityType>
+  <EntityType Name="MessiUsers">
+    <Key>
+      <PropertyRef Name="idMessiUser" />
+    </Key>
+    <Property Name="idMessiUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDevice" Type="Int32" Nullable="false" />
+    <Property Name="idUser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TrustedDevices" Relationship="Self.FK_MessiUsers_TrustedDevices" FromRole="MessiUsers" ToRole="TrustedDevices" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_MessiUsers_Users" FromRole="MessiUsers" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="NewContact">
+    <Key>
+      <PropertyRef Name="idContact" />
+    </Key>
+    <Property Name="idContact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ContactSystem" Relationship="Self.FK_ContactSystem_NewContact" FromRole="NewContact" ToRole="ContactSystem" />
+  </EntityType>
+  <EntityType Name="TrustedDevices">
+    <Key>
+      <PropertyRef Name="idDevice" />
+    </Key>
+    <Property Name="idDevice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HostName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MessiUsers" Relationship="Self.FK_MessiUsers_TrustedDevices" FromRole="TrustedDevices" ToRole="MessiUsers" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeUser" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="descUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MessiUsers" Relationship="Self.FK_MessiUsers_Users" FromRole="Users" ToRole="MessiUsers" />
+  </EntityType>
+  <Association Name="FK_ContactSystem_NewContact">
+    <End Role="NewContact" Type="Self.NewContact" Multiplicity="0..1" />
+    <End Role="ContactSystem" Type="Self.ContactSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewContact">
+        <PropertyRef Name="idContact" />
+      </Principal>
+      <Dependent Role="ContactSystem">
+        <PropertyRef Name="IdContact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessiUsers_TrustedDevices">
+    <End Role="TrustedDevices" Type="Self.TrustedDevices" Multiplicity="1" />
+    <End Role="MessiUsers" Type="Self.MessiUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrustedDevices">
+        <PropertyRef Name="idDevice" />
+      </Principal>
+      <Dependent Role="MessiUsers">
+        <PropertyRef Name="idDevice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessiUsers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MessiUsers" Type="Self.MessiUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="MessiUsers">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DarkCoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminCoordinates" EntityType="Self.AdminCoordinates" />
+    <EntitySet Name="ContactSystem" EntityType="Self.ContactSystem" />
+    <EntitySet Name="MessiUsers" EntityType="Self.MessiUsers" />
+    <EntitySet Name="NewContact" EntityType="Self.NewContact" />
+    <EntitySet Name="TrustedDevices" EntityType="Self.TrustedDevices" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_ContactSystem_NewContact" Association="Self.FK_ContactSystem_NewContact">
+      <End Role="NewContact" EntitySet="NewContact" />
+      <End Role="ContactSystem" EntitySet="ContactSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessiUsers_TrustedDevices" Association="Self.FK_MessiUsers_TrustedDevices">
+      <End Role="TrustedDevices" EntitySet="TrustedDevices" />
+      <End Role="MessiUsers" EntitySet="MessiUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessiUsers_Users" Association="Self.FK_MessiUsers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MessiUsers" EntitySet="MessiUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

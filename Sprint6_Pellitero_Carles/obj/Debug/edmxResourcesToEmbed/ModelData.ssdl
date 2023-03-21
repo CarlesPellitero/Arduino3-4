@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DarkCoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminCoordinates">
+    <Key>
+      <PropertyRef Name="idCoordinate" />
+    </Key>
+    <Property Name="idCoordinate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Coordinate" Type="nvarchar" MaxLength="2" />
+    <Property Name="ValueCoord" Type="nvarchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="ContactSystem">
+    <Key>
+      <PropertyRef Name="IdSystem" />
+    </Key>
+    <Property Name="IdSystem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdContact" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="SystemValue" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MessiUsers">
+    <Key>
+      <PropertyRef Name="idMessiUser" />
+    </Key>
+    <Property Name="idMessiUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDevice" Type="int" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewContact">
+    <Key>
+      <PropertyRef Name="idContact" />
+    </Key>
+    <Property Name="idContact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TrustedDevices">
+    <Key>
+      <PropertyRef Name="idDevice" />
+    </Key>
+    <Property Name="idDevice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="HostName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codeUser" Type="nvarchar" MaxLength="8" />
+    <Property Name="descUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="photo" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <Association Name="FK_ContactSystem_NewContact">
+    <End Role="NewContact" Type="Self.NewContact" Multiplicity="0..1" />
+    <End Role="ContactSystem" Type="Self.ContactSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewContact">
+        <PropertyRef Name="idContact" />
+      </Principal>
+      <Dependent Role="ContactSystem">
+        <PropertyRef Name="IdContact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessiUsers_TrustedDevices">
+    <End Role="TrustedDevices" Type="Self.TrustedDevices" Multiplicity="1" />
+    <End Role="MessiUsers" Type="Self.MessiUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrustedDevices">
+        <PropertyRef Name="idDevice" />
+      </Principal>
+      <Dependent Role="MessiUsers">
+        <PropertyRef Name="idDevice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessiUsers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MessiUsers" Type="Self.MessiUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="MessiUsers">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DarkCoreModelStoreContainer">
+    <EntitySet Name="AdminCoordinates" EntityType="Self.AdminCoordinates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactSystem" EntityType="Self.ContactSystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessiUsers" EntityType="Self.MessiUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewContact" EntityType="Self.NewContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrustedDevices" EntityType="Self.TrustedDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ContactSystem_NewContact" Association="Self.FK_ContactSystem_NewContact">
+      <End Role="NewContact" EntitySet="NewContact" />
+      <End Role="ContactSystem" EntitySet="ContactSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessiUsers_TrustedDevices" Association="Self.FK_MessiUsers_TrustedDevices">
+      <End Role="TrustedDevices" EntitySet="TrustedDevices" />
+      <End Role="MessiUsers" EntitySet="MessiUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessiUsers_Users" Association="Self.FK_MessiUsers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MessiUsers" EntitySet="MessiUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

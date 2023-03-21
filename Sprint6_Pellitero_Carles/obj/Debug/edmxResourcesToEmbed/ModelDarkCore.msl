@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DarkCoreModelStoreContainer" CdmEntityContainer="DarkCoreEntities">
+    <EntitySetMapping Name="ActiveBeacons">
+      <EntityTypeMapping TypeName="DarkCoreModel.ActiveBeacons">
+        <MappingFragment StoreEntitySet="ActiveBeacons">
+          <ScalarProperty Name="idActiveBeacon" ColumnName="idActiveBeacon" />
+          <ScalarProperty Name="codeBeacon" ColumnName="codeBeacon" />
+          <ScalarProperty Name="descBeacon" ColumnName="descBeacon" />
+          <ScalarProperty Name="IdRoute" ColumnName="IdRoute" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminCoordinates">
+      <EntityTypeMapping TypeName="DarkCoreModel.AdminCoordinates">
+        <MappingFragment StoreEntitySet="AdminCoordinates">
+          <ScalarProperty Name="idCoordinate" ColumnName="idCoordinate" />
+          <ScalarProperty Name="Coordinate" ColumnName="Coordinate" />
+          <ScalarProperty Name="ValueCoord" ColumnName="ValueCoord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlackList">
+      <EntityTypeMapping TypeName="DarkCoreModel.BlackList">
+        <MappingFragment StoreEntitySet="BlackList">
+          <ScalarProperty Name="idBlacklist" ColumnName="idBlacklist" />
+          <ScalarProperty Name="codeShip" ColumnName="codeShip" />
+          <ScalarProperty Name="descShip" ColumnName="descShip" />
+          <ScalarProperty Name="ShipTransponder" ColumnName="ShipTransponder" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodeChain">
+      <EntityTypeMapping TypeName="DarkCoreModel.CodeChain">
+        <MappingFragment StoreEntitySet="CodeChain">
+          <ScalarProperty Name="idCodeChain" ColumnName="idCodeChain" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="CodeChain1" ColumnName="CodeChain" />
+          <ScalarProperty Name="QR" ColumnName="QR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessiUsers">
+      <EntityTypeMapping TypeName="DarkCoreModel.MessiUsers">
+        <MappingFragment StoreEntitySet="MessiUsers">
+          <ScalarProperty Name="idMessiUser" ColumnName="idMessiUser" />
+          <ScalarProperty Name="idDevice" ColumnName="idDevice" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PassiveBeacons">
+      <EntityTypeMapping TypeName="DarkCoreModel.PassiveBeacons">
+        <MappingFragment StoreEntitySet="PassiveBeacons">
+          <ScalarProperty Name="idPassiveBeacon" ColumnName="idPassiveBeacon" />
+          <ScalarProperty Name="Cicles" ColumnName="Cicles" />
+          <ScalarProperty Name="Divisor" ColumnName="Divisor" />
+          <ScalarProperty Name="DescBeacon" ColumnName="DescBeacon" />
+          <ScalarProperty Name="Mapposition" ColumnName="Mapposition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="DarkCoreModel.Routes">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="idRoute" ColumnName="idRoute" />
+          <ScalarProperty Name="codeRoute" ColumnName="codeRoute" />
+          <ScalarProperty Name="descRoute" ColumnName="descRoute" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RouteTraffic">
+      <EntityTypeMapping TypeName="DarkCoreModel.RouteTraffic">
+        <MappingFragment StoreEntitySet="RouteTraffic">
+          <ScalarProperty Name="idRouteTraffic" ColumnName="idRouteTraffic" />
+          <ScalarProperty Name="idBeacon" ColumnName="idBeacon" />
+          <ScalarProperty Name="ShipTransponder" ColumnName="ShipTransponder" />
+          <ScalarProperty Name="TrafficDate" ColumnName="TrafficDate" />
+          <ScalarProperty Name="idTypeShip" ColumnName="idTypeShip" />
+          <ScalarProperty Name="AuthorizedAccess" ColumnName="AuthorizedAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipTypes">
+      <EntityTypeMapping TypeName="DarkCoreModel.ShipTypes">
+        <MappingFragment StoreEntitySet="ShipTypes">
+          <ScalarProperty Name="idTypeShip" ColumnName="idTypeShip" />
+          <ScalarProperty Name="CodeTypeShip" ColumnName="CodeTypeShip" />
+          <ScalarProperty Name="DescTypeShip" ColumnName="DescTypeShip" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrustedDevices">
+      <EntityTypeMapping TypeName="DarkCoreModel.TrustedDevices">
+        <MappingFragment StoreEntitySet="TrustedDevices">
+          <ScalarProperty Name="idDevice" ColumnName="idDevice" />
+          <ScalarProperty Name="MAC" ColumnName="MAC" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DarkCoreModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="codeUser" ColumnName="codeUser" />
+          <ScalarProperty Name="descUser" ColumnName="descUser" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
