@@ -1,12 +1,7 @@
 ﻿using QRCoder;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sprint6_Pellitero_Carles
@@ -18,18 +13,15 @@ namespace Sprint6_Pellitero_Carles
             InitializeComponent();
         }
         bool validated = false;
-        string codeBD;
         private void obtenerNombreUsuario()
         {
             try
             {
-                DarkCoreEntities db = new DarkCoreEntities();
-                List<Users> Users;
+                PrimeraBaseDeDadesEntities db = new PrimeraBaseDeDadesEntities();
                 List<string> codeUser = new List<string>();
                 List<string> DescUser = new List<string>();
 
                 string userLogin = tbxLogin.Text;
-                Users = db.Users.ToList();
                 var UserDB = db.Users.FirstOrDefault(p => p.codeUser == userLogin);
                 if (UserDB != null)
                 {
@@ -62,19 +54,17 @@ namespace Sprint6_Pellitero_Carles
         {
             try
             {
-                DarkCoreEntities db = new DarkCoreEntities();
-                List<Users> Users;
+                PrimeraBaseDeDadesEntities db = new PrimeraBaseDeDadesEntities();
                 CodeChain CodeBD = new CodeChain();
                 List<string> Codes = new List<string>();
                 List<string> codeUser = new List<string>();
                 List<string> DescUser = new List<string>();
 
                 string userLogin = tbxLogin.Text;
-                Users = db.Users.ToList();
                 var UserDB = db.Users.FirstOrDefault(p => p.codeUser == userLogin);
                 CodeBD.CodeChain1 = tbxInfo.Text;
                 CodeBD.idUser = UserDB.idUser;
-                db.CodeChain.Add(CodeBD);
+                db.CodeChains.Add(CodeBD);
                 db.SaveChanges();
             }
             catch (Exception)

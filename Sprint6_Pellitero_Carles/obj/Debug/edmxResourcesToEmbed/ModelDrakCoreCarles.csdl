@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrimeraBaseDeDadesModelCarles" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActiveBeacon">
+    <Key>
+      <PropertyRef Name="idActiveBeacon" />
+    </Key>
+    <Property Name="idActiveBeacon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeBeacon" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="descBeacon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdRoute" Type="Int32" />
+    <Property Name="Sector" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Route" Relationship="Self.FK_ActiveBeacons_Routes" FromRole="ActiveBeacons" ToRole="Routes" />
+    <NavigationProperty Name="RouteTraffics" Relationship="Self.FK_RouteTraffic_ActiveBeacons" FromRole="ActiveBeacons" ToRole="RouteTraffic" />
+  </EntityType>
+  <EntityType Name="AdminCoordinate">
+    <Key>
+      <PropertyRef Name="idCoordinate" />
+    </Key>
+    <Property Name="idCoordinate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Coordinate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ValueCoord" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BlackList">
+    <Key>
+      <PropertyRef Name="idBlacklist" />
+    </Key>
+    <Property Name="idBlacklist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeShip" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="descShip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShipTransponder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CodeChain">
+    <Key>
+      <PropertyRef Name="idCodeChain" />
+    </Key>
+    <Property Name="idCodeChain" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUser" Type="Int32" />
+    <Property Name="CodeChain1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="QR" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MessiUser">
+    <Key>
+      <PropertyRef Name="idMessiUser" />
+    </Key>
+    <Property Name="idMessiUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDevice" Type="Int32" Nullable="false" />
+    <Property Name="idUser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TrustedDevice" Relationship="Self.FK_MessiUsers_TrustedDevices" FromRole="MessiUsers" ToRole="TrustedDevices" />
+    <NavigationProperty Name="User" Relationship="Self.FK_MessiUsers_Users" FromRole="MessiUsers" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="PassiveBeacon">
+    <Key>
+      <PropertyRef Name="idPassiveBeacon" />
+    </Key>
+    <Property Name="idPassiveBeacon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cicles" Type="Int32" />
+    <Property Name="Divisor" Type="Int32" />
+    <Property Name="DescBeacon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mapposition" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="idRoute" />
+    </Key>
+    <Property Name="idRoute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeRoute" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="descRoute" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActiveBeacons" Relationship="Self.FK_ActiveBeacons_Routes" FromRole="Routes" ToRole="ActiveBeacons" />
+  </EntityType>
+  <EntityType Name="RouteTraffic">
+    <Key>
+      <PropertyRef Name="idRouteTraffic" />
+    </Key>
+    <Property Name="idRouteTraffic" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idBeacon" Type="Int32" />
+    <Property Name="ShipTransponder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrafficDate" Type="DateTime" Precision="3" />
+    <Property Name="idTypeShip" Type="Int32" />
+    <Property Name="AuthorizedAccess" Type="Boolean" />
+    <NavigationProperty Name="ActiveBeacon" Relationship="Self.FK_RouteTraffic_ActiveBeacons" FromRole="RouteTraffic" ToRole="ActiveBeacons" />
+  </EntityType>
+  <EntityType Name="ShipType">
+    <Key>
+      <PropertyRef Name="idTypeShip" />
+    </Key>
+    <Property Name="idTypeShip" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodeTypeShip" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DescTypeShip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TagId" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TrustedDevice">
+    <Key>
+      <PropertyRef Name="idDevice" />
+    </Key>
+    <Property Name="idDevice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HostName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MessiUsers" Relationship="Self.FK_MessiUsers_TrustedDevices" FromRole="TrustedDevices" ToRole="MessiUsers" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codeUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="descUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MessiUsers" Relationship="Self.FK_MessiUsers_Users" FromRole="Users" ToRole="MessiUsers" />
+  </EntityType>
+  <Association Name="FK_ActiveBeacons_Routes">
+    <End Role="Routes" Type="Self.Route" Multiplicity="0..1" />
+    <End Role="ActiveBeacons" Type="Self.ActiveBeacon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="idRoute" />
+      </Principal>
+      <Dependent Role="ActiveBeacons">
+        <PropertyRef Name="IdRoute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RouteTraffic_ActiveBeacons">
+    <End Role="ActiveBeacons" Type="Self.ActiveBeacon" Multiplicity="0..1" />
+    <End Role="RouteTraffic" Type="Self.RouteTraffic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActiveBeacons">
+        <PropertyRef Name="idActiveBeacon" />
+      </Principal>
+      <Dependent Role="RouteTraffic">
+        <PropertyRef Name="idBeacon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessiUsers_TrustedDevices">
+    <End Role="TrustedDevices" Type="Self.TrustedDevice" Multiplicity="1" />
+    <End Role="MessiUsers" Type="Self.MessiUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrustedDevices">
+        <PropertyRef Name="idDevice" />
+      </Principal>
+      <Dependent Role="MessiUsers">
+        <PropertyRef Name="idDevice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessiUsers_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="MessiUsers" Type="Self.MessiUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="MessiUsers">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PrimeraBaseDeDadesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActiveBeacons" EntityType="Self.ActiveBeacon" />
+    <EntitySet Name="AdminCoordinates" EntityType="Self.AdminCoordinate" />
+    <EntitySet Name="BlackLists" EntityType="Self.BlackList" />
+    <EntitySet Name="CodeChains" EntityType="Self.CodeChain" />
+    <EntitySet Name="MessiUsers" EntityType="Self.MessiUser" />
+    <EntitySet Name="PassiveBeacons" EntityType="Self.PassiveBeacon" />
+    <EntitySet Name="Routes" EntityType="Self.Route" />
+    <EntitySet Name="RouteTraffics" EntityType="Self.RouteTraffic" />
+    <EntitySet Name="ShipTypes" EntityType="Self.ShipType" />
+    <EntitySet Name="TrustedDevices" EntityType="Self.TrustedDevice" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_ActiveBeacons_Routes" Association="Self.FK_ActiveBeacons_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="ActiveBeacons" EntitySet="ActiveBeacons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RouteTraffic_ActiveBeacons" Association="Self.FK_RouteTraffic_ActiveBeacons">
+      <End Role="ActiveBeacons" EntitySet="ActiveBeacons" />
+      <End Role="RouteTraffic" EntitySet="RouteTraffics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessiUsers_TrustedDevices" Association="Self.FK_MessiUsers_TrustedDevices">
+      <End Role="TrustedDevices" EntitySet="TrustedDevices" />
+      <End Role="MessiUsers" EntitySet="MessiUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessiUsers_Users" Association="Self.FK_MessiUsers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MessiUsers" EntitySet="MessiUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

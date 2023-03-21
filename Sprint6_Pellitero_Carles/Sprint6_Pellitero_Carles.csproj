@@ -61,23 +61,32 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveBeacon.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
+    </Compile>
     <Compile Include="ActiveBeacons.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCoordinate.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
     <Compile Include="AdminCoordinates.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
     </Compile>
     <Compile Include="BlackList.cs">
-      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
     <Compile Include="CodeChain.cs">
-      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessiUser.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
     <Compile Include="MessiUsers.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
@@ -97,6 +106,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDarkCore.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ModelDrakCoreCarles.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDrakCoreCarles.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDrakCoreCarles.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDrakCoreCarles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDrakCoreCarles.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PassiveBeacon.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
+    </Compile>
     <Compile Include="PassiveBeacons.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
     </Compile>
@@ -108,17 +135,29 @@
     <Compile Include="QRGenerator.Designer.cs">
       <DependentUpon>QRGenerator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Route.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
+    </Compile>
     <Compile Include="Routes.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
     </Compile>
     <Compile Include="RouteTraffic.cs">
-      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipType.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
     <Compile Include="ShipTypes.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
     </Compile>
+    <Compile Include="TrustedDevice.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
+    </Compile>
     <Compile Include="TrustedDevices.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
@@ -144,6 +183,13 @@
     </EntityDeploy>
     <None Include="ModelDarkCore.edmx.diagram">
       <DependentUpon>ModelDarkCore.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="ModelDrakCoreCarles.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDrakCoreCarles.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelDrakCoreCarles.edmx.diagram">
+      <DependentUpon>ModelDrakCoreCarles.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -172,6 +218,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelDarkCore.edmx</DependentUpon>
       <LastGenOutput>ModelDarkCore.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDrakCoreCarles.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDrakCoreCarles.edmx</DependentUpon>
+      <LastGenOutput>ModelDrakCoreCarles.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDrakCoreCarles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDrakCoreCarles.edmx</DependentUpon>
+      <LastGenOutput>ModelDrakCoreCarles.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

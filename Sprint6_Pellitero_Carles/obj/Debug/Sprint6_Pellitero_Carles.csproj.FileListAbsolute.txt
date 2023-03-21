@@ -35,3 +35,10 @@ D:\M13\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\EntityFramework.SqlServer.x
 D:\M13\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.csproj.CopyComplete
 D:\M13\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.exe
 D:\M13\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.pdb
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\EntityFramework.dll
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\EntityFramework.SqlServer.dll
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\QRCoder.dll
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\EntityFramework.xml
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\EntityFramework.SqlServer.xml
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.QRGenerator.resources
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.csproj.CopyComplete

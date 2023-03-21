@@ -12,15 +12,13 @@ namespace Sprint6_Pellitero_Carles
     using System;
     using System.Collections.Generic;
     
-    public partial class RouteTraffic
+    public partial class MessiUser
     {
-        public int idRouteTraffic { get; set; }
-        public Nullable<int> idBeacon { get; set; }
-        public string ShipTransponder { get; set; }
-        public Nullable<System.DateTime> TrafficDate { get; set; }
-        public Nullable<int> idTypeShip { get; set; }
-        public Nullable<bool> AuthorizedAccess { get; set; }
+        public int idMessiUser { get; set; }
+        public int idDevice { get; set; }
+        public int idUser { get; set; }
     
-        public virtual ActiveBeacon ActiveBeacon { get; set; }
+        public virtual TrustedDevice TrustedDevice { get; set; }
+        public virtual User User { get; set; }
     }
 }
