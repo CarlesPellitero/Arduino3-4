@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DarkCoreModelStoreContainer" CdmEntityContainer="DarkCoreEntities">
+    <EntitySetMapping Name="AdminCoordinates">
+      <EntityTypeMapping TypeName="DarkCoreModel.AdminCoordinates">
+        <MappingFragment StoreEntitySet="AdminCoordinates">
+          <ScalarProperty Name="idCoordinate" ColumnName="idCoordinate" />
+          <ScalarProperty Name="Coordinate" ColumnName="Coordinate" />
+          <ScalarProperty Name="ValueCoord" ColumnName="ValueCoord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactSystem">
+      <EntityTypeMapping TypeName="DarkCoreModel.ContactSystem">
+        <MappingFragment StoreEntitySet="ContactSystem">
+          <ScalarProperty Name="IdSystem" ColumnName="IdSystem" />
+          <ScalarProperty Name="IdContact" ColumnName="IdContact" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SystemValue" ColumnName="SystemValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessiUsers">
+      <EntityTypeMapping TypeName="DarkCoreModel.MessiUsers">
+        <MappingFragment StoreEntitySet="MessiUsers">
+          <ScalarProperty Name="idMessiUser" ColumnName="idMessiUser" />
+          <ScalarProperty Name="idDevice" ColumnName="idDevice" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewContact">
+      <EntityTypeMapping TypeName="DarkCoreModel.NewContact">
+        <MappingFragment StoreEntitySet="NewContact">
+          <ScalarProperty Name="idContact" ColumnName="idContact" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrustedDevices">
+      <EntityTypeMapping TypeName="DarkCoreModel.TrustedDevices">
+        <MappingFragment StoreEntitySet="TrustedDevices">
+          <ScalarProperty Name="idDevice" ColumnName="idDevice" />
+          <ScalarProperty Name="MAC" ColumnName="MAC" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DarkCoreModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="codeUser" ColumnName="codeUser" />
+          <ScalarProperty Name="descUser" ColumnName="descUser" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

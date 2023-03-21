@@ -33,8 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +58,71 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveBeacons.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCoordinates.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BlackList.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CodeChain.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessiUsers.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDarkCore.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDarkCore.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDarkCore.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDarkCore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDarkCore.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PassiveBeacons.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRGenerator.Designer.cs">
+      <DependentUpon>QRGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Routes.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RouteTraffic.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipTypes.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrustedDevices.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +135,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QRGenerator.resx">
+      <DependentUpon>QRGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="ModelDarkCore.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDarkCore.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelDarkCore.edmx.diagram">
+      <DependentUpon>ModelDarkCore.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +158,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelDarkCore.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDarkCore.edmx</DependentUpon>
+      <LastGenOutput>ModelDarkCore.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDarkCore.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDarkCore.edmx</DependentUpon>
+      <LastGenOutput>ModelDarkCore.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
