@@ -94,7 +94,16 @@ namespace Sprint6_Pellitero_Carles
                     btnGnQR.Visible = true;
                     ptbQR.Visible = true;
                 }
+                else
+                {
+                    tbxLogin.Focus();
+                }
             }
+        }
+
+        private void tbxLogin_Enter(object sender, EventArgs e)
+        {
+            tbxLogin.Focus();
         }
     }
 }
