@@ -29,6 +29,7 @@ namespace Sprint6_Pellitero_Carles
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnContaEnrera = new System.Windows.Forms.Button();
             this.cbPorts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@ namespace Sprint6_Pellitero_Carles
             this.lbtemps = new System.Windows.Forms.Label();
             this.txtIntroduit = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DelayTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,6 +165,7 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.TextBox txtIntroduit;
         private System.Windows.Forms.Label lbtemps;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer DelayTime;
     }
 }
 

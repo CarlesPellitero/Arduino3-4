@@ -24,24 +24,23 @@ namespace Sprint6_Pellitero_Carles
             InitializeComponent();
         }
 
+        #region Local Variables
         SerialPort portArduino;
-        bool obert = false, selecionat = false;
+        bool obert = false, selecionat = false,correcta;
         Thread thread;
         private int backcount = 30;
         RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
+        List<password> Password = new List<password>();
         string xifres;
         Timer timer;
+        int delay = 0;
 
-        //
-        //private static System.Timers.Timer timer;
-        //
         public class password
         {
             public string lletra { get; set; }
             public string valors { get; set; }
         }
-
-        List<password> Password = new List<password>();
+        #endregion
 
         #region Functions
         private int RandomGenerator()
@@ -107,6 +106,30 @@ namespace Sprint6_Pellitero_Carles
 
         }
 
+        private void PingtoPlanet(object sender, EventArgs e)
+        {
+
+            if (delay == 3)
+            {
+                QRGenerator qRGenerator = new QRGenerator();
+                qRGenerator.ShowDialog();
+                DelayTime.Stop();
+                this.Hide();
+            }
+            else
+            {
+                delay++;
+            }
+        }
+
+        private void Delay()
+        {
+            DelayTime = new System.Windows.Forms.Timer();
+            DelayTime.Interval = 1000;
+            DelayTime.Tick += new EventHandler(PingtoPlanet);
+            DelayTime.Start();
+        }
+
         private void turnback_Tick(object sender, EventArgs e)
         {
             
@@ -136,12 +159,7 @@ namespace Sprint6_Pellitero_Carles
             {
                 panel1.BackColor = Color.Green;
                 timer.Stop();
-
-                //OBRIRA FORM GENERARCODIQR
-                QRGenerator qRGenerator = new QRGenerator();
-                qRGenerator.ShowDialog();
-                this.Hide();
-
+                Delay();
                 thread.Abort();
             }
             else
@@ -259,7 +277,6 @@ namespace Sprint6_Pellitero_Carles
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //groupBox1.Visible = true;
             if (!obert && selecionat)
             {
                 SeleccionarPort();
