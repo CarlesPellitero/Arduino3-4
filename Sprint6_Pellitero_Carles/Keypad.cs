@@ -115,6 +115,8 @@ namespace Sprint6_Pellitero_Carles
                 qRGenerator.ShowDialog();
                 DelayTime.Stop();
                 this.Hide();
+                thread.Abort();
+
             }
             else
             {
@@ -124,7 +126,7 @@ namespace Sprint6_Pellitero_Carles
 
         private void Delay()
         {
-            DelayTime = new System.Windows.Forms.Timer();
+            DelayTime = new Timer();
             DelayTime.Interval = 1000;
             DelayTime.Tick += new EventHandler(PingtoPlanet);
             DelayTime.Start();
@@ -159,8 +161,8 @@ namespace Sprint6_Pellitero_Carles
             {
                 panel1.BackColor = Color.Green;
                 timer.Stop();
+                //NO ENTRA CORRECTA MENTE
                 Delay();
-                thread.Abort();
             }
             else
             {
