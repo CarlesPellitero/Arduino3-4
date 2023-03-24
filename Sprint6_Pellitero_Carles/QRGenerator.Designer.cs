@@ -34,6 +34,7 @@ namespace Sprint6_Pellitero_Carles
             this.tbxInfo = new System.Windows.Forms.TextBox();
             this.btnGnQR = new System.Windows.Forms.Button();
             this.ptbQR = new System.Windows.Forms.PictureBox();
+            this.btnScan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbQR)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@ namespace Sprint6_Pellitero_Carles
             this.btnGnQR.Name = "btnGnQR";
             this.btnGnQR.Size = new System.Drawing.Size(134, 35);
             this.btnGnQR.TabIndex = 3;
-            this.btnGnQR.Text = "Generar QR";
+            this.btnGnQR.Text = "Generated QR";
             this.btnGnQR.UseVisualStyleBackColor = true;
             this.btnGnQR.Visible = false;
             this.btnGnQR.Click += new System.EventHandler(this.btnGnQR_Click);
@@ -88,11 +89,23 @@ namespace Sprint6_Pellitero_Carles
             this.ptbQR.TabIndex = 4;
             this.ptbQR.TabStop = false;
             // 
+            // btnScan
+            // 
+            this.btnScan.Location = new System.Drawing.Point(963, 248);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.Size = new System.Drawing.Size(134, 35);
+            this.btnScan.TabIndex = 5;
+            this.btnScan.Text = "Scan QR";
+            this.btnScan.UseVisualStyleBackColor = true;
+            this.btnScan.Visible = false;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
+            // 
             // QRGenerator
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btnScan);
             this.Controls.Add(this.ptbQR);
             this.Controls.Add(this.btnGnQR);
             this.Controls.Add(this.tbxInfo);
@@ -115,5 +128,6 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.TextBox tbxInfo;
         private System.Windows.Forms.Button btnGnQR;
         private System.Windows.Forms.PictureBox ptbQR;
+        private System.Windows.Forms.Button btnScan;
     }
 }

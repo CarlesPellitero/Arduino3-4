@@ -76,6 +76,12 @@
     <Compile Include="BlackList.cs">
       <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
+    <Compile Include="CodeCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeCard.designer.cs">
+      <DependentUpon>CodeCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="CodeChain.cs">
       <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
@@ -162,6 +168,9 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CodeCard.resx">
+      <DependentUpon>CodeCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Keypad.resx">
       <DependentUpon>Keypad.cs</DependentUpon>
     </EmbeddedResource>

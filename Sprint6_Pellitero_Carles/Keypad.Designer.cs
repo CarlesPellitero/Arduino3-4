@@ -133,6 +133,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(827, 360);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtIntroduit);

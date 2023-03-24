@@ -105,5 +105,10 @@ namespace Sprint6_Pellitero_Carles
         {
             tbxLogin.Focus();
         }
+
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            //ABRIR MOHAMED
+        }
     }
 }
