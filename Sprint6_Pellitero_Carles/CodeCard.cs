@@ -34,7 +34,7 @@ namespace CodeCard
             SqlDataAdapter adapter;
             dts = new DataSet();
 
-            query = "select * from Users where codeUser = '" + textBox1.Text+"';";
+            query = "select * from Users where codeUser = '" + txtUser.Text+"';";
             adapter = new SqlDataAdapter(query, conn);
             conn.Open();
             adapter.Fill(dts);         
@@ -42,7 +42,7 @@ namespace CodeCard
 
             if (dts.Tables[0].Rows.Count > 0)
             {
-                textBox4.Text = dts.Tables[0].Rows[0]["descUser"].ToString();
+                txtDesc.Text = dts.Tables[0].Rows[0]["descUser"].ToString();
             }
 
         }
@@ -52,7 +52,7 @@ namespace CodeCard
             SqlDataAdapter adapter;
             dts = new DataSet();
 
-            query2 = "select * from CodeChain where CodeChain = '" + textBox2.Text + "';";
+            query2 = "select * from CodeChain where CodeChain = '" + txtQRInfo.Text + "';";
             adapter = new SqlDataAdapter(query2, conn);
             conn.Open();
             adapter.Fill(dts);
@@ -60,8 +60,8 @@ namespace CodeCard
 
             if (dts.Tables[0].Rows.Count > 0)
             {
-                panel2.Visible = false;
-                panel1.Visible = true;
+                panel.Visible = false;
+                InsertForm.Visible = true;
 
                 //SALE LA PANTALLA DE CONTRASEÑAS
             }
@@ -92,14 +92,14 @@ namespace CodeCard
             filter= new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filter)
             {
-                comboBox1.Items.Add(filterInfo.Name);
-                comboBox1.SelectedIndex = 0;
+                cbCamara.Items.Add(filterInfo.Name);
+                cbCamara.SelectedIndex = 0;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VideoCaptureDevice = new VideoCaptureDevice(filter[comboBox1.SelectedIndex].MonikerString);
+            VideoCaptureDevice = new VideoCaptureDevice(filter[cbCamara.SelectedIndex].MonikerString);
             VideoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
             VideoCaptureDevice.Start();
             timer1.Start();
@@ -107,7 +107,7 @@ namespace CodeCard
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            pictureBox1.Image=(Bitmap)eventArgs.Frame.Clone();  
+            cam.Image=(Bitmap)eventArgs.Frame.Clone();  
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -120,13 +120,13 @@ namespace CodeCard
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (pictureBox1.Image!=null)
+            if (cam.Image!=null)
             {
                 BarcodeReader barcode = new BarcodeReader();
-                Result result = barcode.Decode((Bitmap)pictureBox1.Image);
+                Result result = barcode.Decode((Bitmap)cam.Image);
                 if (result!=null)
                 {
-                    textBox2.Text = result.ToString();
+                    txtQRInfo.Text = result.ToString();
                     timer1.Stop();
                     if (VideoCaptureDevice.IsRunning)
                     {
