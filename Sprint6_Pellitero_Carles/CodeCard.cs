@@ -12,7 +12,7 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
 
-namespace CodeCard
+namespace Sprint6_Pellitero_Carles
 {
     public partial class CodeCard : Form
     {

@@ -159,10 +159,12 @@ namespace Sprint6_Pellitero_Carles
             //El sistema indicarà si els 2 codis són iguals o no.
             if (txtIntroduit.Text.Equals(lbCodiValid.Text))
             {
+                Delay();
                 panel1.BackColor = Color.Green;
                 timer.Stop();
+                thread.Abort();
                 //NO ENTRA CORRECTA MENTE
-                Delay();
+                
             }
             else
             {

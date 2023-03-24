@@ -1,4 +1,4 @@
-﻿namespace CodeCard
+﻿namespace Sprint6_Pellitero_Carles
 {
     partial class CodeCard
     {
