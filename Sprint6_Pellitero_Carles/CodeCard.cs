@@ -60,10 +60,7 @@ namespace CodeCard
 
             if (dts.Tables[0].Rows.Count > 0)
             {
-                MessageBox.Show("Datos correctos");
-                pictureBox1.Visible = false;
-                textBox2.Visible = false;
-                textBox3.Visible = false;
+                panel2.Visible = false;
                 panel1.Visible = true;
 
                 //SALE LA PANTALLA DE CONTRASEÑAS
