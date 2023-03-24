@@ -111,10 +111,10 @@ namespace Sprint6_Pellitero_Carles
 
             if (delay == 3)
             {
+                this.Hide();
                 QRGenerator qRGenerator = new QRGenerator();
                 qRGenerator.ShowDialog();
-                DelayTime.Stop();
-                this.Hide();
+                DelayTime.Stop();                
                 thread.Abort();
 
             }
@@ -156,62 +156,40 @@ namespace Sprint6_Pellitero_Carles
 
         private void Validar()
         {
+            thread.Abort();
             //El sistema indicarà si els 2 codis són iguals o no.
             if (txtIntroduit.Text.Equals(lbCodiValid.Text))
             {
-                Delay();
+                //Delay();
                 panel1.BackColor = Color.Green;
                 timer.Stop();
-                thread.Abort();
-                //NO ENTRA CORRECTA MENTE
+                Delay();
                 
             }
             else
             {
                 panel1.BackColor = Color.Red;
                 timer.Stop();
-                thread.Abort();
+                
 
             }
         }
 
         private void HILO()
         {
-            string texto = "";
+            //string texto = "";
             while (portArduino.IsOpen)
             {
                 try
                 {
                     string valor = portArduino.ReadLine();
 
-                    if (valor == "#\r")
+                    if (valor != "\r")
                     {
-                        Validar();                        
+                        txtIntroduit.Text = valor.ToString(); //PETA
+                        timer.Stop();
                     }
-                    else
-                    {                        
-                        if (txtIntroduit.InvokeRequired)
-                        {
-                            txtIntroduit.Invoke((MethodInvoker)delegate
-                            {
-                                if (valor == "A\r")
-                                {
-                                    txtIntroduit.Text = txtIntroduit.Text.Substring(0,txtIntroduit.Text.Length - 1);
-                                    texto = texto.Substring(0,texto.Length - 1);
-                                }
-                                else if (valor == "B\r")
-                                {
-                                    txtIntroduit.Text = "";
-                                    texto = "";
-                                }
-                                else
-                                {
-                                    texto += valor.Trim();
-                                    txtIntroduit.Text = texto;
-                                }                                
-                            });
-                        }
-                    }
+                    
                 }
                 catch (Exception)
                 {}
@@ -261,6 +239,11 @@ namespace Sprint6_Pellitero_Carles
             thread = new Thread(HILO);
             thread.Start();
 
+        }
+
+        private void txtIntroduit_TextChanged(object sender, EventArgs e)
+        {
+            Validar();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -313,3 +296,26 @@ namespace Sprint6_Pellitero_Carles
         #endregion
     }
 }
+
+
+/*if (txtIntroduit.InvokeRequired)
+                        {
+                            txtIntroduit.Invoke((MethodInvoker)delegate
+                            {
+                                if (valor == "A\r")
+                                {
+                                    txtIntroduit.Text = txtIntroduit.Text.Substring(0,txtIntroduit.Text.Length - 1);
+                                    texto = texto.Substring(0,texto.Length - 1);
+                                }
+                                else if (valor == "B\r")
+                                {
+                                    txtIntroduit.Text = "";
+                                    texto = "";
+                                }
+                                else
+                                {
+                                    texto += valor.Trim();
+                                    txtIntroduit.Text = texto;
+                                }                                
+                            });
+                        }*/

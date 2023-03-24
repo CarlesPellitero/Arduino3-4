@@ -120,6 +120,7 @@ namespace Sprint6_Pellitero_Carles
             this.txtIntroduit.ReadOnly = true;
             this.txtIntroduit.Size = new System.Drawing.Size(161, 48);
             this.txtIntroduit.TabIndex = 8;
+            this.txtIntroduit.TextChanged += new System.EventHandler(this.txtIntroduit_TextChanged);
             // 
             // panel1
             // 

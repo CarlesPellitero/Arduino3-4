@@ -115,6 +115,7 @@ namespace Sprint6_Pellitero_Carles
             this.Name = "QRGenerator";
             this.Text = "QRGenerator";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.QRGenerator_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

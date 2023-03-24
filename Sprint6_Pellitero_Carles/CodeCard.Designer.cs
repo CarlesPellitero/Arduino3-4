@@ -130,7 +130,6 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1212, 489);
             this.panel.TabIndex = 8;
-            this.panel.Visible = false;
             // 
             // CodeCard
             // 

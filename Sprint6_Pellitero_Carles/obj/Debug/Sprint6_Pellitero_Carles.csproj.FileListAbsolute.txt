@@ -52,4 +52,4 @@ D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Deb
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\AForge.Video.DirectShow.xml
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\zxing.xml
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\bin\Debug\zxing.presentation.xml
-D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\CodeCard.CodeCard.resources
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\Sprint6_Pellitero_Carles\obj\Debug\Sprint6_Pellitero_Carles.CodeCard.resources
