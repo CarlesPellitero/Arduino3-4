@@ -113,14 +113,17 @@ namespace Sprint6_Pellitero_Carles
             {
                 this.Hide();
                 QRGenerator qRGenerator = new QRGenerator();
+                delay++;
                 qRGenerator.ShowDialog();
-                DelayTime.Stop();
-                //thread.Abort();
 
             }
             else
             {
                 delay++;
+                if (delay > 3)
+                {
+                    DelayTime.Stop();
+                }
             }
         }
 
@@ -158,7 +161,7 @@ namespace Sprint6_Pellitero_Carles
         {
             thread.Abort();
             //El sistema indicarà si els 2 codis són iguals o no.
-            if (txtIntroduit.Text.Equals(lbCodiValid.Text))
+            if (txtIntroduit.Text.Trim().Equals(lbCodiValid.Text))
             {
                 //Delay();
                 panel1.BackColor = Color.Green;
@@ -182,8 +185,16 @@ namespace Sprint6_Pellitero_Carles
             {
                 try
                 {
-                    string valor = portArduino.ReadLine();
-                    txtIntroduit.Text = valor.ToString();
+                    string valor = portArduino.ReadLine().ToString();
+
+                    if (txtIntroduit.InvokeRequired)
+                    {
+                        txtIntroduit.Invoke((MethodInvoker)delegate
+                        {
+                            txtIntroduit.Text = valor.ToString();
+                        });
+                    }
+                    
 
                     //if (valor != "\r")
                     //{
