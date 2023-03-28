@@ -114,8 +114,8 @@ namespace Sprint6_Pellitero_Carles
                 this.Hide();
                 QRGenerator qRGenerator = new QRGenerator();
                 qRGenerator.ShowDialog();
-                DelayTime.Stop();                
-                thread.Abort();
+                DelayTime.Stop();
+                //thread.Abort();
 
             }
             else
@@ -183,12 +183,13 @@ namespace Sprint6_Pellitero_Carles
                 try
                 {
                     string valor = portArduino.ReadLine();
+                    txtIntroduit.Text = valor.ToString();
 
-                    if (valor != "\r")
-                    {
-                        txtIntroduit.Text = valor.ToString(); //PETA
-                        timer.Stop();
-                    }
+                    //if (valor != "\r")
+                    //{
+                    //     //PETA
+                    //    timer.Stop();
+                    //}
                     
                 }
                 catch (Exception)
