@@ -20,66 +20,47 @@ namespace Sprint6_Pellitero_Carles
         {
             InitializeComponent();
         }
-        private SqlConnection conn;
-        private string query;
-        private string query2;
-        DataSet dts;
+        private string DBCodeChain;
         FilterInfoCollection filter;
         VideoCaptureDevice VideoCaptureDevice;
+        DarkCoreEntitiesMoha db;
 
 
         private void PortarDades()
         {
-            configurarCion();
-            SqlDataAdapter adapter;
-            dts = new DataSet();
+            
+            List<string> codeUser = new List<string>();
+            List<string> DescUser = new List<string>();
 
-            query = "select * from Users where codeUser = '" + txtUser.Text+"';";
-            adapter = new SqlDataAdapter(query, conn);
-            conn.Open();
-            adapter.Fill(dts);         
-            conn.Close();
-
-            if (dts.Tables[0].Rows.Count > 0)
+            string userLogin = txtUser.Text;
+            var UserDB = db.Users.FirstOrDefault(p => p.codeUser == userLogin);
+            if (UserDB != null)
             {
-                txtDesc.Text = dts.Tables[0].Rows[0]["descUser"].ToString();
-            }
+                txtDesc.Text = UserDB.descUser;
 
-        }
-        private void PortarDades2()
-        {
-            configurarCion();
-            SqlDataAdapter adapter;
-            dts = new DataSet();
-
-            query2 = "select * from CodeChain where CodeChain = '" + txtQRInfo.Text + "';";
-            adapter = new SqlDataAdapter(query2, conn);
-            conn.Open();
-            adapter.Fill(dts);
-            conn.Close();
-
-            if (dts.Tables[0].Rows.Count > 0)
-            {
-                panel.Visible = false;
-                InsertForm.Visible = true;
-
-                //SALE LA PANTALLA DE CONTRASEÑAS
             }
             else
             {
-                MessageBox.Show("Datos incorrectos");
-
+                MessageBox.Show("Usuario invalido!");
+                txtUser.Clear();
+                txtUser.Focus();
             }
-
         }
-
-
-
-        private void configurarCion()
+        private void PortarDades2()
         {
-            string cnx;
-            cnx = "Data Source=MOHAMED;Initial Catalog=DarkCore;Integrated Security=True";
-            conn = new SqlConnection(cnx);
+
+            List<string> CodeChain = new List<string>();
+
+            var CodeChainDB = db.CodeChains.FirstOrDefault(p => p.CodeChain1 == txtQRInfo.Text);
+            if (CodeChainDB != null)
+            {
+                txtBBDD.Text = CodeChainDB.CodeChain1;
+
+            } 
+            else
+            {
+                MessageBox.Show("Codigo QR no valido!");
+            }
         }
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
@@ -89,7 +70,8 @@ namespace Sprint6_Pellitero_Carles
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            filter= new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            db = new DarkCoreEntitiesMoha();
+            filter = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filter)
             {
                 cbCamara.Items.Add(filterInfo.Name);
@@ -103,6 +85,10 @@ namespace Sprint6_Pellitero_Carles
             VideoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
             VideoCaptureDevice.Start();
             timer1.Start();
+            cam.Visible = true;
+            panel.Visible = true;
+            txtDesc.Visible = true;
+            txtQRInfo.Visible = true;
         }
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)

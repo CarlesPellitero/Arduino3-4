@@ -59,6 +59,7 @@
             this.cam.Location = new System.Drawing.Point(0, 0);
             this.cam.Name = "cam";
             this.cam.Size = new System.Drawing.Size(1212, 489);
+            this.cam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cam.TabIndex = 1;
             this.cam.TabStop = false;
             // 

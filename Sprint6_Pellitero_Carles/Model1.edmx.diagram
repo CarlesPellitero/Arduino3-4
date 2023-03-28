@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f0ca54614dbe423ca57c07f237464d21" Name="Diagram1">
+        <EntityTypeShape EntityType="DarkCoreModel1.ActiveBeacon" Width="1.5" PointX="5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.AdminCoordinate" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.Agency" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.BlackList" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.CodeChain" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.MessiUser" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.PassiveBeacon" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.Route" Width="1.5" PointX="2.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.RouteTraffic" Width="1.5" PointX="7.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.ShipType" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.TrustedDevice" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DarkCoreModel1.User" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="DarkCoreModel1.FK_ActiveBeacons_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="DarkCoreModel1.FK_RouteTraffic_ActiveBeacons" ManuallyRouted="false" />
+        <AssociationConnector Association="DarkCoreModel1.FK_MessiUsers_TrustedDevices" ManuallyRouted="false" />
+        <AssociationConnector Association="DarkCoreModel1.FK_MessiUsers_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
