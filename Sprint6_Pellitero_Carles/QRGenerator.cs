@@ -62,10 +62,20 @@ namespace Sprint6_Pellitero_Carles
 
                 string userLogin = tbxLogin.Text;
                 var UserDB = db.Users.FirstOrDefault(p => p.codeUser == userLogin);
-                CodeBD.CodeChain1 = tbxInfo.Text;
-                CodeBD.idUser = UserDB.idUser;
-                db.CodeChains.Add(CodeBD);
+                var codeChain = db.CodeChains.FirstOrDefault(c => c.idUser == UserDB.idUser);
+                if (codeChain == null)
+                {
+                    CodeBD.CodeChain1 = tbxInfo.Text;
+                    CodeBD.idUser = UserDB.idUser;
+                    db.CodeChains.Add(CodeBD);
+                }
+                else
+                {
+                    codeChain.CodeChain1 = tbxInfo.Text;
+                }
+
                 db.SaveChanges();
+
             }
             catch (Exception)
             {
