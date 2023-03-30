@@ -46,6 +46,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             // btnShow
             // 
+            this.btnShow.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.Location = new System.Drawing.Point(125, 37);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(110, 41);
@@ -77,6 +78,7 @@ namespace Sprint6_Pellitero_Carles
             this.tblCoords.Controls.Add(this.label3, 1, 0);
             this.tblCoords.Controls.Add(this.label1, 0, 0);
             this.tblCoords.Controls.Add(this.label2, 0, 1);
+            this.tblCoords.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tblCoords.Location = new System.Drawing.Point(125, 203);
             this.tblCoords.Name = "tblCoords";
             this.tblCoords.RowCount = 5;

@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
@@ -16,87 +11,62 @@ namespace Sprint6_Pellitero_Carles
 {
     public partial class CodeCard : Form
     {
+
         public CodeCard()
         {
             InitializeComponent();
         }
 
-        private SqlConnection conn;
-        private string query;
-        private string query2;
-        DataSet dts;
         FilterInfoCollection filter;
         VideoCaptureDevice VideoCaptureDevice;
+        PrimeraBaseDeDadesEntities db;
         Timer DelayTime;
         int delay;
 
-
         private void PortarDades()
         {
-            configurarCion();
-            SqlDataAdapter adapter;
-            dts = new DataSet();
+            List<string> codeUser = new List<string>();
+            List<string> DescUser = new List<string>();
 
-            query = "select * from Users where codeUser = '" + txtUser.Text+"';";
-            adapter = new SqlDataAdapter(query, conn);
-            conn.Open();
-            adapter.Fill(dts);         
-            conn.Close();
+            string userLogin = txtUser.Text;
+            var UserDB = db.Users.FirstOrDefault(p => p.codeUser == userLogin);
 
-            if (dts.Tables[0].Rows.Count > 0)
+            if (UserDB != null)
             {
-                txtDesc.Text = dts.Tables[0].Rows[0]["descUser"].ToString();
+                txtDesc.Text = UserDB.descUser;
+                btnStart.Visible = true;
+                panel.Visible = true;
+                txtUser.Text = userLogin;
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario invalido!");
+                txtUser.Clear();
+                txtUser.Focus();
             }
 
         }
         private void PortarDades2()
         {
-            configurarCion();
-            SqlDataAdapter adapter;
-            dts = new DataSet();
+            List<string> CodeChain = new List<string>();
 
-            query2 = "select * from CodeChain where CodeChain = '" + txtQRInfo.Text + "';";
-            adapter = new SqlDataAdapter(query2, conn);
-            conn.Open();
-            adapter.Fill(dts);
-            conn.Close();
-
-            if (dts.Tables[0].Rows.Count > 0)
+            var CodeChainDB = db.CodeChains.FirstOrDefault(p => p.CodeChain1 == txtQRInfo.Text);
+            if (CodeChainDB != null)
             {
-                panel.Visible = false;
-                InsertForm.Visible = true;
+                txtBBDD.Text = CodeChainDB.CodeChain1;
 
-                //SALE LA PANTALLA DE CONTRASEÑAS
             }
             else
             {
-                MessageBox.Show("Datos incorrectos");
-
+                MessageBox.Show("Codigo QR no valido!");
             }
-
-        }
-
-
-
-        private void configurarCion()
-        {
-            //Carles:
-            string cnx = "Data Source=DESKTOP-K19N91Q;Initial Catalog=PrimeraBaseDeDades;Integrated Security=True";
-
-            //Isaac:
-            //
-
-            conn = new SqlConnection(cnx);
-        }
-
-        private void textBox1_Validating(object sender, CancelEventArgs e)
-        {
-            PortarDades();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            filter= new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            db = new PrimeraBaseDeDadesEntities();
+            filter = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filter)
             {
                 cbCamara.Items.Add(filterInfo.Name);
@@ -110,6 +80,10 @@ namespace Sprint6_Pellitero_Carles
             VideoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
             VideoCaptureDevice.Start();
             timer1.Start();
+            cam.Visible = true;
+            panel.Visible = true;
+            txtDesc.Visible = true;
+            txtQRInfo.Visible = true;
         }
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -118,32 +92,32 @@ namespace Sprint6_Pellitero_Carles
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (VideoCaptureDevice.IsRunning)
+        {            
+            if (VideoCaptureDevice != null)
             {
-                VideoCaptureDevice.Stop();
+                if (VideoCaptureDevice.IsRunning)
+                {
+                    VideoCaptureDevice.Stop();
+                }
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (cam.Image!=null)
+            if (cam.Image != null)
             {
                 BarcodeReader barcode = new BarcodeReader();
                 Result result = barcode.Decode((Bitmap)cam.Image);
-                if (result!=null)
-                {
+                if (result != null)
+                {                    
                     txtQRInfo.Text = result.ToString();
                     timer1.Stop();
-
                     if (VideoCaptureDevice.IsRunning)
                     {
                         VideoCaptureDevice.Stop();
                     }
 
                     Delay();
-                    
-
                 }
             }
         }
@@ -168,7 +142,6 @@ namespace Sprint6_Pellitero_Carles
                 adminCoord.Show();
                 panel.Visible = false;
                 InsertForm.Visible = true;
-                //adminCoord.BringToFront();
                 delay++;
 
             }
@@ -182,12 +155,22 @@ namespace Sprint6_Pellitero_Carles
             }
         }
 
-        private void textBox2_Validating(object sender, CancelEventArgs e)
+        private void txtQRInfo_TextChanged(object sender, EventArgs e)
         {
             PortarDades2();
-
         }
 
-        //DataSet dts = sql.PortarPerConsulta("select * from Users where Login = '" + txtUsername.Text + "' and Password = '" + txtBoxPasswrd.Text + "'");
+        private void txtUser_Enter(object sender, EventArgs e)
+        {
+            txtUser.Focus();
+        }
+
+        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PortarDades();
+            }
+        }
     }
 }

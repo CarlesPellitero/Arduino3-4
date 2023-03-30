@@ -45,12 +45,14 @@
             // 
             // txtUser
             // 
+            this.txtUser.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(79, 65);
             this.txtUser.Multiline = true;
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(121, 22);
             this.txtUser.TabIndex = 0;
-            this.txtUser.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             // 
             // cam
             // 
@@ -65,16 +67,18 @@
             // txtQRInfo
             // 
             this.txtQRInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtQRInfo.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQRInfo.Location = new System.Drawing.Point(903, 0);
             this.txtQRInfo.Multiline = true;
             this.txtQRInfo.Name = "txtQRInfo";
             this.txtQRInfo.Size = new System.Drawing.Size(309, 489);
             this.txtQRInfo.TabIndex = 2;
-            this.txtQRInfo.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
+            this.txtQRInfo.TextChanged += new System.EventHandler(this.txtQRInfo_TextChanged);
             // 
             // txtBBDD
             // 
             this.txtBBDD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtBBDD.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBBDD.Location = new System.Drawing.Point(0, 0);
             this.txtBBDD.Multiline = true;
             this.txtBBDD.Name = "txtBBDD";
@@ -83,6 +87,7 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesc.Location = new System.Drawing.Point(246, 65);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
@@ -92,6 +97,7 @@
             // 
             // btnStart
             // 
+            this.btnStart.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(581, 64);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
@@ -102,10 +108,11 @@
             // 
             // cbCamara
             // 
+            this.cbCamara.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCamara.FormattingEnabled = true;
             this.cbCamara.Location = new System.Drawing.Point(79, 21);
             this.cbCamara.Name = "cbCamara";
-            this.cbCamara.Size = new System.Drawing.Size(121, 24);
+            this.cbCamara.Size = new System.Drawing.Size(166, 29);
             this.cbCamara.TabIndex = 6;
             // 
             // timer1
@@ -130,6 +137,7 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1212, 489);
             this.panel.TabIndex = 8;
+            this.panel.Visible = false;
             // 
             // CodeCard
             // 
