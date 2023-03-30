@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -81,6 +82,12 @@
     </Compile>
     <Compile Include="ActiveBeacons.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCoord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCoord.Designer.cs">
+      <DependentUpon>AdminCoord.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminCoordinate.cs">
       <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
@@ -183,6 +190,9 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelDarkCore.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminCoord.resx">
+      <DependentUpon>AdminCoord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CodeCard.resx">
       <DependentUpon>CodeCard.cs</DependentUpon>
     </EmbeddedResource>

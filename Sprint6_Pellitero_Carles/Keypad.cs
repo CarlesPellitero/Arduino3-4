@@ -172,15 +172,12 @@ namespace Sprint6_Pellitero_Carles
             else
             {
                 panel1.BackColor = Color.Red;
-                timer.Stop();
-                
-
+                timer.Stop();               
             }
         }
 
         private void HILO()
         {
-            //string texto = "";
             while (portArduino.IsOpen)
             {
                 try
@@ -193,15 +190,7 @@ namespace Sprint6_Pellitero_Carles
                         {
                             txtIntroduit.Text = valor.ToString();
                         });
-                    }
-                    
-
-                    //if (valor != "\r")
-                    //{
-                    //     //PETA
-                    //    timer.Stop();
-                    //}
-                    
+                    }                                       
                 }
                 catch (Exception)
                 {}

@@ -20,12 +20,15 @@ namespace Sprint6_Pellitero_Carles
         {
             InitializeComponent();
         }
+
         private SqlConnection conn;
         private string query;
         private string query2;
         DataSet dts;
         FilterInfoCollection filter;
         VideoCaptureDevice VideoCaptureDevice;
+        Timer DelayTime;
+        int delay;
 
 
         private void PortarDades()
@@ -77,8 +80,12 @@ namespace Sprint6_Pellitero_Carles
 
         private void configurarCion()
         {
-            string cnx;
-            cnx = "Data Source=MOHAMED;Initial Catalog=DarkCore;Integrated Security=True";
+            //Carles:
+            string cnx = "Data Source=DESKTOP-K19N91Q;Initial Catalog=PrimeraBaseDeDades;Integrated Security=True";
+
+            //Isaac:
+            //
+
             conn = new SqlConnection(cnx);
         }
 
@@ -128,10 +135,49 @@ namespace Sprint6_Pellitero_Carles
                 {
                     txtQRInfo.Text = result.ToString();
                     timer1.Stop();
+
                     if (VideoCaptureDevice.IsRunning)
                     {
                         VideoCaptureDevice.Stop();
                     }
+
+                    Delay();
+                    
+
+                }
+            }
+        }
+
+        private void Delay()
+        {
+            DelayTime = new Timer();
+            DelayTime.Interval = 1000;
+            DelayTime.Tick += new EventHandler(PingtoPlanet);
+            DelayTime.Start();
+        }
+
+        private void PingtoPlanet(object sender, EventArgs e)
+        {
+
+            if (delay == 3)
+            {
+                AdminCoord adminCoord = new AdminCoord();
+                adminCoord.TopLevel = false;
+                InsertForm.Controls.Add(adminCoord);
+                adminCoord.Dock = DockStyle.Fill;
+                adminCoord.Show();
+                panel.Visible = false;
+                InsertForm.Visible = true;
+                //adminCoord.BringToFront();
+                delay++;
+
+            }
+            else
+            {
+                delay++;
+                if (delay > 3)
+                {
+                    DelayTime.Stop();
                 }
             }
         }

@@ -97,7 +97,6 @@ namespace Sprint6_Pellitero_Carles
             this.btnScan.TabIndex = 5;
             this.btnScan.Text = "Scan QR";
             this.btnScan.UseVisualStyleBackColor = true;
-            this.btnScan.Visible = false;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
             // QRGenerator

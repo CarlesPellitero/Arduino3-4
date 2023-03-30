@@ -115,9 +115,9 @@
             // 
             // InsertForm
             // 
-            this.InsertForm.Location = new System.Drawing.Point(79, 102);
+            this.InsertForm.Location = new System.Drawing.Point(120, 111);
             this.InsertForm.Name = "InsertForm";
-            this.InsertForm.Size = new System.Drawing.Size(1125, 492);
+            this.InsertForm.Size = new System.Drawing.Size(1171, 492);
             this.InsertForm.TabIndex = 7;
             this.InsertForm.Visible = false;
             // 
@@ -126,7 +126,7 @@
             this.panel.Controls.Add(this.txtBBDD);
             this.panel.Controls.Add(this.txtQRInfo);
             this.panel.Controls.Add(this.cam);
-            this.panel.Location = new System.Drawing.Point(53, 105);
+            this.panel.Location = new System.Drawing.Point(79, 114);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1212, 489);
             this.panel.TabIndex = 8;

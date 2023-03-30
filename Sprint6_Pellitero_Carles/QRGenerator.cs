@@ -108,7 +108,9 @@ namespace Sprint6_Pellitero_Carles
 
         private void btnScan_Click(object sender, EventArgs e)
         {
-            //ABRIR MOHAMED
+            CodeCard card = new CodeCard();
+            this.Hide();
+            card.ShowDialog();           
         }
 
         private void QRGenerator_Load(object sender, EventArgs e)
