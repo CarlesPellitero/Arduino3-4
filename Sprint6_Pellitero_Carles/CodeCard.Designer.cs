@@ -98,9 +98,9 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(581, 64);
+            this.btnStart.Location = new System.Drawing.Point(581, 63);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(80, 34);
             this.btnStart.TabIndex = 5;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
