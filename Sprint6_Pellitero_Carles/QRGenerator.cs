@@ -122,16 +122,5 @@ namespace Sprint6_Pellitero_Carles
             this.Hide();
             card.ShowDialog();           
         }
-
-        private void QRGenerator_Load(object sender, EventArgs e)
-        {
-            //foreach (Form item in Application.OpenForms)
-            //{
-            //    if (item.Name == "Keypad")
-            //    {
-            //        item.Close();
-            //    }
-            //}
-        }
     }
 }

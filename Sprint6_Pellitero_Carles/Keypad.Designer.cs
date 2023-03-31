@@ -57,7 +57,7 @@ namespace Sprint6_Pellitero_Carles
             // cbPorts
             // 
             this.cbPorts.FormattingEnabled = true;
-            this.cbPorts.Location = new System.Drawing.Point(488, 294);
+            this.cbPorts.Location = new System.Drawing.Point(182, 154);
             this.cbPorts.Name = "cbPorts";
             this.cbPorts.Size = new System.Drawing.Size(149, 24);
             this.cbPorts.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(484, 256);
+            this.label2.Location = new System.Drawing.Point(178, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(243, 21);
             this.label2.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace Sprint6_Pellitero_Carles
             // btnComprovar
             // 
             this.btnComprovar.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComprovar.Location = new System.Drawing.Point(665, 287);
+            this.btnComprovar.Location = new System.Drawing.Point(359, 147);
             this.btnComprovar.Name = "btnComprovar";
             this.btnComprovar.Size = new System.Drawing.Size(90, 37);
             this.btnComprovar.TabIndex = 4;
@@ -88,7 +88,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.lbCodiValid.AutoSize = true;
             this.lbCodiValid.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodiValid.Location = new System.Drawing.Point(1229, 266);
+            this.lbCodiValid.Location = new System.Drawing.Point(923, 126);
             this.lbCodiValid.Name = "lbCodiValid";
             this.lbCodiValid.Size = new System.Drawing.Size(81, 21);
             this.lbCodiValid.TabIndex = 5;
@@ -98,7 +98,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.groupBox1.Controls.Add(this.lbtemps);
             this.groupBox1.Controls.Add(this.btnContaEnrera);
-            this.groupBox1.Location = new System.Drawing.Point(808, 260);
+            this.groupBox1.Location = new System.Drawing.Point(502, 120);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(328, 184);
             this.groupBox1.TabIndex = 6;
@@ -119,7 +119,7 @@ namespace Sprint6_Pellitero_Carles
             // txtIntroduit
             // 
             this.txtIntroduit.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIntroduit.Location = new System.Drawing.Point(1197, 358);
+            this.txtIntroduit.Location = new System.Drawing.Point(891, 218);
             this.txtIntroduit.Multiline = true;
             this.txtIntroduit.Name = "txtIntroduit";
             this.txtIntroduit.ReadOnly = true;
@@ -130,7 +130,7 @@ namespace Sprint6_Pellitero_Carles
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
-            this.panel1.Location = new System.Drawing.Point(1233, 290);
+            this.panel1.Location = new System.Drawing.Point(927, 150);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(80, 50);
             this.panel1.TabIndex = 9;

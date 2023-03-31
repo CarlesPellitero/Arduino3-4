@@ -51,6 +51,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(121, 22);
             this.txtUser.TabIndex = 0;
+            this.txtUser.TabStop = false;
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             // 
@@ -101,7 +102,7 @@
             this.btnStart.Location = new System.Drawing.Point(581, 63);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(80, 34);
-            this.btnStart.TabIndex = 5;
+            this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.button1_Click);
@@ -113,7 +114,7 @@
             this.cbCamara.Location = new System.Drawing.Point(79, 21);
             this.cbCamara.Name = "cbCamara";
             this.cbCamara.Size = new System.Drawing.Size(166, 29);
-            this.cbCamara.TabIndex = 6;
+            this.cbCamara.TabIndex = 0;
             // 
             // timer1
             // 

@@ -33,9 +33,10 @@ namespace Sprint6_Pellitero_Carles
 
             if (UserDB != null)
             {
-                txtDesc.Text = UserDB.descUser;
                 btnStart.Visible = true;
                 panel.Visible = true;
+
+                txtDesc.Text = UserDB.descUser;
                 txtUser.Text = userLogin;
 
             }
