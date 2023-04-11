@@ -116,11 +116,9 @@ namespace Sprint6_Pellitero_Carles
             tbxLogin.Focus();
         }
 
-        private void btnScan_Click(object sender, EventArgs e)
+        private void QRGenerator_FormClosing(object sender, FormClosingEventArgs e)
         {
-            CodeCard card = new CodeCard();
-            this.Hide();
-            card.ShowDialog();           
+            Application.Exit();
         }
     }
 }

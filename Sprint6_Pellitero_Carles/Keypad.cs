@@ -26,7 +26,7 @@ namespace Sprint6_Pellitero_Carles
 
         #region Local Variables
         SerialPort portArduino;
-        bool obert = false, selecionat = false,correcta;
+        bool obert = false, selecionat = false;
         Thread thread;
         private int backcount = 30;
         RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
@@ -151,7 +151,7 @@ namespace Sprint6_Pellitero_Carles
             else
             {
                 
-                lbtemps.Text = "00:" + backcount ; //+ (backcount * 1000).ToString()
+                lbtemps.Text = "00:" + backcount ;
                 backcount--;
             }
 
@@ -163,12 +163,9 @@ namespace Sprint6_Pellitero_Carles
             //El sistema indicarà si els 2 codis són iguals o no.
             if (txtIntroduit.Text.Trim().Equals(lbCodiValid.Text))
             {
-                //Delay();
                 panel1.BackColor = Color.Green;
                 timer.Stop();
-                btnScan.Visible = true;
-                Delay();
-                
+                btnScan.Visible = true;                
             }
             else
             {
@@ -200,7 +197,7 @@ namespace Sprint6_Pellitero_Carles
         }
 
 
-        private void Usuari_Panel() //MIRAR SI MEJORAR
+        private void Usuari_Panel()
         {
             int valor = RandomGenerator();
             Random random = new Random(valor);
@@ -226,8 +223,7 @@ namespace Sprint6_Pellitero_Carles
                 
                 if (correcta != null)
                 {
-                    MessageBox.Show("Correcta");
-
+                    Delay();
                 }
                 else
                 {
@@ -323,6 +319,7 @@ namespace Sprint6_Pellitero_Carles
                 if (portArduino.IsOpen) { portArduino.Close(); }
 
                 qr.Close();
+                thread.Abort();
 
             }
             catch (Exception) { }

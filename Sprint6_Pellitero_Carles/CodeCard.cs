@@ -35,9 +35,7 @@ namespace Sprint6_Pellitero_Carles
             {
                 btnStart.Visible = true;
                 panel.Visible = true;
-
                 txtDesc.Text = UserDB.descUser;
-                txtUser.Text = userLogin;
 
             }
             else
@@ -113,6 +111,7 @@ namespace Sprint6_Pellitero_Carles
                 {                    
                     txtQRInfo.Text = result.ToString();
                     timer1.Stop();
+
                     if (VideoCaptureDevice.IsRunning)
                     {
                         VideoCaptureDevice.Stop();
