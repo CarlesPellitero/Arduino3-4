@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
 using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
@@ -50,7 +44,6 @@ namespace Sprint6_Pellitero_Carles
             rngCsp.GetBytes(byteArray);
             int randomInteger = BitConverter.ToInt32(byteArray, 0);
             return randomInteger;
-
         }
 
         private void GeneradorA1D5()
@@ -104,7 +97,6 @@ namespace Sprint6_Pellitero_Carles
             }
             catch (ArgumentException)
             { }
-
         }
 
         private void PingtoPlanet(object sender, EventArgs e)
@@ -115,7 +107,6 @@ namespace Sprint6_Pellitero_Carles
                 QRGenerator qRGenerator = new QRGenerator();
                 delay++;
                 qRGenerator.ShowDialog();
-
             }
             else
             {
@@ -136,8 +127,7 @@ namespace Sprint6_Pellitero_Carles
         }
 
         private void turnback_Tick(object sender, EventArgs e)
-        {
-            
+        {            
             if (backcount == 0)
             {
                 timer.Stop();
@@ -154,7 +144,6 @@ namespace Sprint6_Pellitero_Carles
                 lbtemps.Text = "00:" + backcount ;
                 backcount--;
             }
-
         }
 
         private void Validar()
@@ -192,7 +181,6 @@ namespace Sprint6_Pellitero_Carles
                 }
                 catch (Exception)
                 {}
-
             }
         }
 
@@ -266,7 +254,6 @@ namespace Sprint6_Pellitero_Carles
             timer.Tick += new EventHandler(turnback_Tick);
             btnContaEnrera.Enabled = false;
 
-
             //Generarà el codi de 6 xifres aleatòries al PC
             int digit, randomInteger;
             randomInteger = RandomGenerator();
@@ -281,7 +268,6 @@ namespace Sprint6_Pellitero_Carles
             //ILO PARA PODER RECORRER EL TXTBOX
             thread = new Thread(HILO);
             thread.Start();
-
         }
 
         private void txtIntroduit_TextChanged(object sender, EventArgs e)
