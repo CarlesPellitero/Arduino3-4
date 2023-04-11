@@ -40,6 +40,11 @@ namespace Sprint6_Pellitero_Carles
             this.txtIntroduit = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DelayTime = new System.Windows.Forms.Timer(this.components);
+            this.btnScan = new System.Windows.Forms.Button();
+            this.QRScanner = new System.Windows.Forms.Panel();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.lbUser = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,12 +140,64 @@ namespace Sprint6_Pellitero_Carles
             this.panel1.Size = new System.Drawing.Size(80, 50);
             this.panel1.TabIndex = 9;
             // 
+            // btnScan
+            // 
+            this.btnScan.Location = new System.Drawing.Point(1484, 291);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.Size = new System.Drawing.Size(134, 35);
+            this.btnScan.TabIndex = 10;
+            this.btnScan.Text = "Scan QR";
+            this.btnScan.UseVisualStyleBackColor = true;
+            this.btnScan.Visible = false;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
+            // 
+            // QRScanner
+            // 
+            this.QRScanner.Location = new System.Drawing.Point(744, 362);
+            this.QRScanner.Name = "QRScanner";
+            this.QRScanner.Size = new System.Drawing.Size(959, 426);
+            this.QRScanner.TabIndex = 11;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(278, 446);
+            this.txtPass.Multiline = true;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(154, 22);
+            this.txtPass.TabIndex = 13;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.Location = new System.Drawing.Point(178, 383);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(58, 21);
+            this.lbUser.TabIndex = 14;
+            this.lbUser.Text = "[User]";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(178, 446);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 21);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Password:";
+            // 
             // Keypad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(1630, 894);
+            this.ClientSize = new System.Drawing.Size(1733, 894);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbUser);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.QRScanner);
+            this.Controls.Add(this.btnScan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtIntroduit);
             this.Controls.Add(this.groupBox1);
@@ -173,6 +230,11 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.Label lbtemps;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer DelayTime;
+        private System.Windows.Forms.Button btnScan;
+        private System.Windows.Forms.Panel QRScanner;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -33,6 +33,7 @@ namespace Sprint6_Pellitero_Carles
         List<password> Password = new List<password>();
         string xifres;
         Timer timer;
+        CodeCard qr;
         int delay = 0;
 
         public class password
@@ -108,7 +109,6 @@ namespace Sprint6_Pellitero_Carles
 
         private void PingtoPlanet(object sender, EventArgs e)
         {
-
             if (delay == 3)
             {
                 this.Hide();
@@ -166,6 +166,7 @@ namespace Sprint6_Pellitero_Carles
                 //Delay();
                 panel1.BackColor = Color.Green;
                 timer.Stop();
+                btnScan.Visible = true;
                 Delay();
                 
             }
@@ -197,6 +198,49 @@ namespace Sprint6_Pellitero_Carles
 
             }
         }
+
+
+        private void Usuari_Panel() //MIRAR SI MEJORAR
+        {
+            int valor = RandomGenerator();
+            Random random = new Random(valor);
+
+            string[] lletres = { "A", "B", "C", "D" };
+            string[] numeros = { "1", "2", "3", "4", "5" };
+
+            int LIndex = random.Next(lletres.Length);
+            int NIndex = random.Next(numeros.Length);
+
+            lbUser.Text = lletres[LIndex] + numeros[NIndex];
+        }
+
+        private void ValidarUser()
+        {
+            try
+            {
+                PrimeraBaseDeDadesEntities db = new PrimeraBaseDeDadesEntities();
+                string userLogin = lbUser.Text;
+                string pasww = txtPass.Text;
+
+                var correcta = db.AdminCoordinates.FirstOrDefault(p => p.Coordinate == userLogin && p.ValueCoord == pasww);
+                
+                if (correcta != null)
+                {
+                    MessageBox.Show("Correcta");
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario invalido!");
+                    txtPass.Clear();
+                    txtPass.Focus();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         #endregion
 
         #region Events
@@ -207,6 +251,8 @@ namespace Sprint6_Pellitero_Carles
             {
                 cbPorts.Items.Add(port);
             }
+
+            Usuari_Panel();
         }
 
         private void cbPorts_SelectedIndexChanged(object sender, EventArgs e)
@@ -247,6 +293,23 @@ namespace Sprint6_Pellitero_Carles
             Validar();
         }
 
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            qr = new CodeCard();
+            qr.TopLevel = false;
+            QRScanner.Controls.Add(qr);
+            qr.Dock = DockStyle.Fill;
+            qr.Show();
+        }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarUser();
+            }
+        }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
@@ -258,6 +321,8 @@ namespace Sprint6_Pellitero_Carles
                 }
 
                 if (portArduino.IsOpen) { portArduino.Close(); }
+
+                qr.Close();
 
             }
             catch (Exception) { }
@@ -297,26 +362,3 @@ namespace Sprint6_Pellitero_Carles
         #endregion
     }
 }
-
-
-/*if (txtIntroduit.InvokeRequired)
-                        {
-                            txtIntroduit.Invoke((MethodInvoker)delegate
-                            {
-                                if (valor == "A\r")
-                                {
-                                    txtIntroduit.Text = txtIntroduit.Text.Substring(0,txtIntroduit.Text.Length - 1);
-                                    texto = texto.Substring(0,texto.Length - 1);
-                                }
-                                else if (valor == "B\r")
-                                {
-                                    txtIntroduit.Text = "";
-                                    texto = "";
-                                }
-                                else
-                                {
-                                    texto += valor.Trim();
-                                    txtIntroduit.Text = texto;
-                                }                                
-                            });
-                        }*/
