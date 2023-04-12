@@ -19,15 +19,21 @@ namespace ScreensProgram
         }
 
         bool valido = true;
+        QRGenerator op;
 
 
         private void ObrirQrGenerator()
         {
+            if (op != null)
+            {
+                op.Close();
+            }
+
             if (valido)
             {
-                QRGenerator op = new QRGenerator();
+                op = new QRGenerator();
                 op.TopLevel = false;
-                panel1.Controls.Add(op);
+                screen.Controls.Add(op);
                 op.Dock = DockStyle.Fill;
                 op.Show();
             }
@@ -35,24 +41,31 @@ namespace ScreensProgram
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            GenerateToken gt = new GenerateToken();
-            
+            //CLASE TOKEN
+            Delay.Start();
+            GenerateToken gt = new GenerateToken();            
             
 
         }
 
-        private void btnOption1_Click(object sender, EventArgs e)
-        {
-                       
-        }
 
         private void Delay_Tick(object sender, EventArgs e)
         {
             //Con un timer ir validando
+            int cont = 0;  // CONT EL mAXIMO ES 180 porque cada segundo es 1 cont
+            if (cont == 180)
+            {
+                Delay.Stop();
+                valido = false;
+            }
+            else
+            {
+                cont++;
+            }
 
         }
 
-        private void title_Click(object sender, EventArgs e)
+        private void btnOpcion1_Click(object sender, EventArgs e)
         {
             ObrirQrGenerator();
         }
@@ -67,9 +80,14 @@ namespace ScreensProgram
             ObrirQrGenerator();
         }
 
-        private void btnOpcion1_Paint(object sender, PaintEventArgs e)
+        private void title_Click(object sender, EventArgs e)
         {
             ObrirQrGenerator();
+        }
+
+        private void btnOpcion1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

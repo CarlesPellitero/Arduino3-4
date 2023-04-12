@@ -22,3 +22,4 @@ D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\bin\Debug\EntityF
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\bin\Debug\AForge.xml
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\ScreensProgram.Properties.Resources.resources
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\ScreensProgram.csproj.CopyComplete
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\bin\Debug\ScreensProgram.dll.config

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint6_Pellitero_Carles", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreensProgram", "..\ScreensProgram\ScreensProgram.csproj", "{627F9EDB-FF6E-4796-A59B-EF378EE05C1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "..\WindowsFormsApp1\WindowsFormsApp1.csproj", "{048DCD91-9F82-4ABF-8EC4-931E77174785}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{627F9EDB-FF6E-4796-A59B-EF378EE05C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{627F9EDB-FF6E-4796-A59B-EF378EE05C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{627F9EDB-FF6E-4796-A59B-EF378EE05C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048DCD91-9F82-4ABF-8EC4-931E77174785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048DCD91-9F82-4ABF-8EC4-931E77174785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048DCD91-9F82-4ABF-8EC4-931E77174785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048DCD91-9F82-4ABF-8EC4-931E77174785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

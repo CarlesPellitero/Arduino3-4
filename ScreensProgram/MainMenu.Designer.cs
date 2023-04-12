@@ -31,7 +31,7 @@ namespace ScreensProgram
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.screen = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Delay = new System.Windows.Forms.Timer(this.components);
             this.title = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@ namespace ScreensProgram
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnOpcion1.SuspendLayout();
             this.btnOpcion2.SuspendLayout();
@@ -60,13 +61,13 @@ namespace ScreensProgram
             this.btnOpcion4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // screen
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(452, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(895, 825);
-            this.panel1.TabIndex = 0;
+            this.screen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.screen.Location = new System.Drawing.Point(452, 0);
+            this.screen.Name = "screen";
+            this.screen.Size = new System.Drawing.Size(995, 825);
+            this.screen.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -129,6 +130,7 @@ namespace ScreensProgram
             this.btnOpcion1.Name = "btnOpcion1";
             this.btnOpcion1.Size = new System.Drawing.Size(230, 173);
             this.btnOpcion1.TabIndex = 9;
+            this.btnOpcion1.Click += new System.EventHandler(this.btnOpcion1_Click);
             this.btnOpcion1.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOpcion1_Paint);
             // 
             // btnOpcion2
@@ -161,7 +163,7 @@ namespace ScreensProgram
             this.title2.Name = "title2";
             this.title2.Size = new System.Drawing.Size(202, 22);
             this.title2.TabIndex = 6;
-            this.title2.Text = "GeneratorQR";
+            this.title2.Text = "TitulExemple";
             // 
             // txtinfo2
             // 
@@ -204,7 +206,7 @@ namespace ScreensProgram
             this.title3.Name = "title3";
             this.title3.Size = new System.Drawing.Size(202, 22);
             this.title3.TabIndex = 6;
-            this.title3.Text = "GeneratorQR";
+            this.title3.Text = "TitulExemple";
             // 
             // label9
             // 
@@ -247,7 +249,7 @@ namespace ScreensProgram
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(202, 22);
             this.label11.TabIndex = 6;
-            this.label11.Text = "GeneratorQR";
+            this.label11.Text = "TitulExemple";
             // 
             // label12
             // 
@@ -294,12 +296,20 @@ namespace ScreensProgram
             this.label2.Text = "Aquesta pantalla es el menu principal que esta distribuides les seves funcions en" +
     " 4 botóns que es mostrara a la pantalla a la nostra dreta\r\n";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.panel1.Location = new System.Drawing.Point(404, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 826);
+            this.panel1.TabIndex = 15;
+            // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(1347, 825);
+            this.ClientSize = new System.Drawing.Size(1447, 825);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label13);
@@ -307,12 +317,12 @@ namespace ScreensProgram
             this.Controls.Add(this.btnOpcion3);
             this.Controls.Add(this.btnOpcion2);
             this.Controls.Add(this.btnOpcion1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.screen);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainMenu";
             this.ShowIcon = false;
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.btnOpcion1.ResumeLayout(false);
@@ -330,7 +340,7 @@ namespace ScreensProgram
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel screen;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer Delay;
         private System.Windows.Forms.Label title;
@@ -352,5 +362,6 @@ namespace ScreensProgram
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

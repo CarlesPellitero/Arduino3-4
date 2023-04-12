@@ -37,8 +37,7 @@ namespace Sprint6_Pellitero_Carles
                 }
             }
             catch (Exception)
-            {
-
+            { 
             }
 
         }
@@ -114,11 +113,6 @@ namespace Sprint6_Pellitero_Carles
         private void tbxLogin_Enter(object sender, EventArgs e)
         {
             tbxLogin.Focus();
-        }
-
-        private void QRGenerator_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
+        }        
     }
 }
