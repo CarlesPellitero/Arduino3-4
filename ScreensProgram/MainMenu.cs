@@ -20,6 +20,19 @@ namespace ScreensProgram
 
         bool valido = true;
 
+
+        private void ObrirQrGenerator()
+        {
+            if (valido)
+            {
+                QRGenerator op = new QRGenerator();
+                op.TopLevel = false;
+                panel1.Controls.Add(op);
+                op.Dock = DockStyle.Fill;
+                op.Show();
+            }
+        }
+
         private void MainMenu_Load(object sender, EventArgs e)
         {
             GenerateToken gt = new GenerateToken();
@@ -30,20 +43,33 @@ namespace ScreensProgram
 
         private void btnOption1_Click(object sender, EventArgs e)
         {
-            if (valido)
-            {
-                QRGenerator op = new QRGenerator();
-                op.TopLevel = false;
-                panel1.Controls.Add(op);
-                op.Dock = DockStyle.Fill;
-                op.Show();
-            }            
+                       
         }
 
         private void Delay_Tick(object sender, EventArgs e)
         {
             //Con un timer ir validando
 
+        }
+
+        private void title_Click(object sender, EventArgs e)
+        {
+            ObrirQrGenerator();
+        }
+
+        private void txtinfo_Click(object sender, EventArgs e)
+        {
+            ObrirQrGenerator();
+        }
+
+        private void txtTraduct_Click(object sender, EventArgs e)
+        {
+            ObrirQrGenerator();
+        }
+
+        private void btnOpcion1_Paint(object sender, PaintEventArgs e)
+        {
+            ObrirQrGenerator();
         }
     }
 }
