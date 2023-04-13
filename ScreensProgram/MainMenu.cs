@@ -21,7 +21,6 @@ namespace ScreensProgram
         bool valido = true;
         QRGenerator op;
 
-
         private void ObrirQrGenerator()
         {
             if (op != null)
@@ -43,8 +42,9 @@ namespace ScreensProgram
         {
             //CLASE TOKEN
             Delay.Start();
-            GenerateToken gt = new GenerateToken();            
-            
+            GenerateToken.GeneratedToken();
+
+
 
         }
 
