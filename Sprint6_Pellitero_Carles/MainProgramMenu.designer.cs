@@ -1,7 +1,7 @@
 ﻿
 namespace Sprint6_Pellitero_Carles
 {
-    partial class MainMenu
+    partial class MainProgramMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Sprint6_Pellitero_Carles
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProgramMenu));
             this.screen = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Delay = new System.Windows.Forms.Timer(this.components);

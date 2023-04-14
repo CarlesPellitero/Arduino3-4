@@ -105,7 +105,7 @@ namespace Sprint6_Pellitero_Carles
             if (delay == 3)
             {
                 this.Hide();
-                MainMenu main = new MainMenu();
+                MainProgramMenu main = new MainProgramMenu();
                 delay++;
                 main.ShowDialog();
             }

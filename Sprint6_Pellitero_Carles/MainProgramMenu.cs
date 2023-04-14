@@ -11,9 +11,9 @@ using ScreensProgram;
 
 namespace Sprint6_Pellitero_Carles
 {
-    public partial class MainMenu : Form
+    public partial class MainProgramMenu : Form
     {
-        public MainMenu()
+        public MainProgramMenu()
         {
             InitializeComponent();
         }
