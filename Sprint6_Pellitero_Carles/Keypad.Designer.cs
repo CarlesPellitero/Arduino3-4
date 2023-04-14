@@ -161,12 +161,13 @@ namespace Sprint6_Pellitero_Carles
             // 
             // txtPass
             // 
+            this.txtPass.AcceptsReturn = true;
             this.txtPass.Location = new System.Drawing.Point(278, 446);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(154, 22);
             this.txtPass.TabIndex = 13;
-            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown_1);
             // 
             // lbUser
             // 

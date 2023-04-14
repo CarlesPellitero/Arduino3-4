@@ -131,7 +131,6 @@ namespace Sprint6_Pellitero_Carles
             this.btnOpcion1.Size = new System.Drawing.Size(230, 173);
             this.btnOpcion1.TabIndex = 9;
             this.btnOpcion1.Click += new System.EventHandler(this.btnOpcion1_Click);
-            this.btnOpcion1.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOpcion1_Paint);
             // 
             // btnOpcion2
             // 

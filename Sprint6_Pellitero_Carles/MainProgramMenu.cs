@@ -87,11 +87,6 @@ namespace Sprint6_Pellitero_Carles
         private void title_Click(object sender, EventArgs e)
         {
             ObrirQrGenerator();
-        }
-
-        private void btnOpcion1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        }        
     }
 }

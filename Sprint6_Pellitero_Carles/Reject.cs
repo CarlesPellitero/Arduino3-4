@@ -34,5 +34,10 @@ namespace Sprint6_Pellitero_Carles
         {
             Delay.Start();
         }
+
+        private void Reject_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
