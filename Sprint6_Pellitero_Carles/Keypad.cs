@@ -213,6 +213,7 @@ namespace Sprint6_Pellitero_Carles
                 if (correcta != null)
                 {
                     Delay();
+                    info.Text = "Validant usuari";
                 }
                 else
                 {
@@ -323,6 +324,7 @@ namespace Sprint6_Pellitero_Carles
                     obert = true;
                     portArduino.Write("ACK\n");
                     string valor = portArduino.ReadLine();
+
                     if (valor == "ACK\r")
                     {
                         groupBox1.Visible = true;

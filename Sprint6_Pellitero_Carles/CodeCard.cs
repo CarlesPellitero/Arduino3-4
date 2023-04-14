@@ -109,17 +109,22 @@ namespace Sprint6_Pellitero_Carles
             {
                 BarcodeReader barcode = new BarcodeReader();
                 Result result = barcode.Decode((Bitmap)cam.Image); //MEJORAR
-                if (result != null && qrVal == true)
-                {                    
-                    txtQRInfo.Text = result.ToString();
+                if (qrVal == true)
+                {
+                    Delay();
                     timer1.Stop();
+
+                }
+
+                if (result != null)
+                {                    
+                    txtQRInfo.Text = result.ToString();                    
 
                     if (VideoCaptureDevice.IsRunning)
                     {
                         VideoCaptureDevice.Stop();
                     }
-
-                    Delay();
+                    
                 }
             }
         }

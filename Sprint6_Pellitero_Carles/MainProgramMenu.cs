@@ -58,7 +58,7 @@ namespace Sprint6_Pellitero_Carles
             //Con un timer ir validando
             DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
 
-            if (when < DateTime.UtcNow.AddMinutes(-5))
+            if (when < DateTime.UtcNow.AddMinutes(-1)) //5
             {
                 Delay.Stop();
                 valido = false;
