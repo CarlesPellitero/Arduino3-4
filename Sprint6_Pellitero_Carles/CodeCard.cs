@@ -21,6 +21,7 @@ namespace Sprint6_Pellitero_Carles
         VideoCaptureDevice VideoCaptureDevice;
         PrimeraBaseDeDadesEntities db;
         Timer DelayTime;
+        bool userVal;
         int delay;
 
         private void PortarDades()
@@ -36,11 +37,13 @@ namespace Sprint6_Pellitero_Carles
                 btnStart.Visible = true;
                 panel.Visible = true;
                 txtDesc.Text = UserDB.descUser;
+                userVal = true;
 
             }
             else
             {
                 MessageBox.Show("Usuario invalido!");
+                userVal = false;
                 txtUser.Clear();
                 txtUser.Focus();
             }
@@ -107,7 +110,7 @@ namespace Sprint6_Pellitero_Carles
             {
                 BarcodeReader barcode = new BarcodeReader();
                 Result result = barcode.Decode((Bitmap)cam.Image); //MEJORAR
-                if (result != null)
+                if (result != null && userVal == true)
                 {                    
                     txtQRInfo.Text = result.ToString();
                     timer1.Stop();
