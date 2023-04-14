@@ -71,6 +71,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reject.resx">
+      <DependentUpon>Reject.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sprint6_Pellitero_Carles\Sprint6_Pellitero_Carles.csproj">

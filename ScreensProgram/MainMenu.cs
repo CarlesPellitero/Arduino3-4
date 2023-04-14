@@ -20,6 +20,7 @@ namespace ScreensProgram
 
         bool valido = true;
         QRGenerator op;
+        byte[] data;
 
         private void ObrirQrGenerator()
         {
@@ -42,28 +43,28 @@ namespace ScreensProgram
         {
             //CLASE TOKEN
             Delay.Start();
-            GenerateToken.GeneratedToken();
-
-
-
+            data = GenerateToken.GeneratedToken(data);
         }
 
 
         private void Delay_Tick(object sender, EventArgs e)
         {
             //Con un timer ir validando
-            int cont = 0;  // CONT EL mAXIMO ES 180 porque cada segundo es 1 cont
-            if (cont == 180)
+            DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
+
+            if (when < DateTime.UtcNow.AddMinutes(-5))
             {
                 Delay.Stop();
                 valido = false;
             }
             else
             {
-                cont++;
+                valido = true;
+                Reject reject = new Reject();
+                this.Hide();
+                reject.ShowDialog();
             }
-
-        }
+        }    
 
         private void btnOpcion1_Click(object sender, EventArgs e)
         {
