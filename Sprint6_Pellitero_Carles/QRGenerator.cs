@@ -36,8 +36,9 @@ namespace Sprint6_Pellitero_Carles
                     tbxLogin.Focus();
                 }
             }
-            catch (Exception)
-            { 
+            catch (Exception ex )
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }

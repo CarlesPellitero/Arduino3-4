@@ -106,7 +106,7 @@ namespace Sprint6_Pellitero_Carles
             if (cam.Image != null)
             {
                 BarcodeReader barcode = new BarcodeReader();
-                Result result = barcode.Decode((Bitmap)cam.Image);
+                Result result = barcode.Decode((Bitmap)cam.Image); //MEJORAR
                 if (result != null)
                 {                    
                     txtQRInfo.Text = result.ToString();

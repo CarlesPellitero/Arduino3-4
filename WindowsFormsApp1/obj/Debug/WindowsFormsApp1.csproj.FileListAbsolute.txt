@@ -7,7 +7,6 @@ D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\AForg
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\AForge.Video.dll
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\zxing.dll
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\EntityFramework.dll
-D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\QRCoder.dll
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\AForge.dll
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\ScreensProgram.pdb
 D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\WindowsFormsApp1\bin\Debug\Sprint6_Pellitero_Carles.pdb

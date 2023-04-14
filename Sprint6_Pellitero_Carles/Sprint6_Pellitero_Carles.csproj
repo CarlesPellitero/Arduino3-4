@@ -113,6 +113,12 @@
     <Compile Include="Keypad.designer.cs">
       <DependentUpon>Keypad.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessiUser.cs">
       <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
     </Compile>
@@ -160,8 +166,14 @@
     <Compile Include="QRGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QRGenerator.Designer.cs">
+    <Compile Include="QRGenerator.designer.cs">
       <DependentUpon>QRGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reject.designer.cs">
+      <DependentUpon>Reject.cs</DependentUpon>
     </Compile>
     <Compile Include="Route.cs">
       <DependentUpon>ModelDrakCoreCarles.tt</DependentUpon>
@@ -199,6 +211,9 @@
     <EmbeddedResource Include="Keypad.resx">
       <DependentUpon>Keypad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -210,6 +225,9 @@
     </Compile>
     <EmbeddedResource Include="QRGenerator.resx">
       <DependentUpon>QRGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reject.resx">
+      <DependentUpon>Reject.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="ModelDarkCore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -263,6 +281,12 @@
       <DependentUpon>ModelDrakCoreCarles.edmx</DependentUpon>
       <LastGenOutput>ModelDrakCoreCarles.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScreensProgram\Clases.csproj">
+      <Project>{627f9edb-ff6e-4796-a59b-ef378ee05c1f}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

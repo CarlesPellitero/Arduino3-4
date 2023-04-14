@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
+using ScreensProgram;
 
 namespace Sprint6_Pellitero_Carles
 {
@@ -104,9 +105,9 @@ namespace Sprint6_Pellitero_Carles
             if (delay == 3)
             {
                 this.Hide();
-                QRGenerator qRGenerator = new QRGenerator();
+                MainMenu main = new MainMenu();
                 delay++;
-                qRGenerator.ShowDialog();
+                main.ShowDialog();
             }
             else
             {
