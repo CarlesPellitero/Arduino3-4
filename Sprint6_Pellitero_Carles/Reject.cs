@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sprint6_Pellitero_Carles
@@ -23,6 +16,7 @@ namespace Sprint6_Pellitero_Carles
             if(temps == 3)
             {
                 Delay.Stop();
+                Application.Exit();
             }
             else
             {

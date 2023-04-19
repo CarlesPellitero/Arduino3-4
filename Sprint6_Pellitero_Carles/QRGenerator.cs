@@ -74,7 +74,7 @@ namespace Sprint6_Pellitero_Carles
                     codeChain.CodeChain1 = tbxInfo.Text;
                 }
 
-                db.SaveChanges();
+                db.SaveChanges();              
 
             }
             catch (Exception)

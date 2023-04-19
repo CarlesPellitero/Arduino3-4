@@ -8,7 +8,6 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
-using ScreensProgram;
 
 namespace Sprint6_Pellitero_Carles
 {

@@ -51,18 +51,20 @@ namespace Sprint6_Pellitero_Carles
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Death Star", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(277, 501);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(466, 14);
+            this.label1.Size = new System.Drawing.Size(485, 14);
             this.label1.TabIndex = 1;
-            this.label1.Text = "No pots utilitzar més el menú, se t\'ha acabat el temps";
+            this.label1.Text = "No pots utilitzar mes el menu, se t\'ha acabat el temps";
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Droidobesh Depot", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,6 +87,7 @@ namespace Sprint6_Pellitero_Carles
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reject";
             this.ShowIcon = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
