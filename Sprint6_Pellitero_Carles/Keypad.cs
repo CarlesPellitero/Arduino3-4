@@ -8,7 +8,6 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
-using ScreensProgram;
 
 namespace Sprint6_Pellitero_Carles
 {
@@ -105,7 +104,7 @@ namespace Sprint6_Pellitero_Carles
             if (delay == 3)
             {
                 this.Hide();
-                MainMenu main = new MainMenu();
+                MainProgramMenu main = new MainProgramMenu();
                 delay++;
                 main.ShowDialog();
             }
@@ -155,7 +154,7 @@ namespace Sprint6_Pellitero_Carles
             {
                 panel1.BackColor = Color.Green;
                 timer.Stop();
-                btnScan.Visible = true;                
+                btnScan.Visible = true;
             }
             else
             {
@@ -213,12 +212,14 @@ namespace Sprint6_Pellitero_Carles
                 if (correcta != null)
                 {
                     Delay();
+                    info.Text = "Validant usuari";
                 }
                 else
                 {
-                    MessageBox.Show("Usuario invalido!");
+                    info.Text = "Usuario invalido!";
                     txtPass.Clear();
                     txtPass.Focus();
+                    correcta = null;
                 }
             }
             catch (Exception)
@@ -285,14 +286,6 @@ namespace Sprint6_Pellitero_Carles
             qr.Show();
         }
 
-        private void txtPass_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                ValidarUser();
-            }
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
@@ -312,6 +305,14 @@ namespace Sprint6_Pellitero_Carles
             catch (Exception) { }
         }
 
+        private void txtPass_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarUser();
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (!obert && selecionat)
@@ -323,6 +324,7 @@ namespace Sprint6_Pellitero_Carles
                     obert = true;
                     portArduino.Write("ACK\n");
                     string valor = portArduino.ReadLine();
+
                     if (valor == "ACK\r")
                     {
                         groupBox1.Visible = true;

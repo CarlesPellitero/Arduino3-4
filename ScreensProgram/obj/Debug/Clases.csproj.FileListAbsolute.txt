@@ -1,0 +1,9 @@
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\bin\Debug\ScreensProgram.dll.config
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\bin\Debug\ScreensProgram.dll
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\bin\Debug\ScreensProgram.pdb
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\Clases.csproj.AssemblyReference.cache
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\ScreensProgram.Properties.Resources.resources
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\Clases.csproj.GenerateResource.cache
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\ScreensProgram.dll
+D:\2022.2023\M13\Arduino\Activitat34\Arduino3-4\ScreensProgram\obj\Debug\ScreensProgram.pdb

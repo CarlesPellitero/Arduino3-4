@@ -45,6 +45,7 @@ namespace Sprint6_Pellitero_Carles
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lbUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.info = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,12 +161,13 @@ namespace Sprint6_Pellitero_Carles
             // 
             // txtPass
             // 
+            this.txtPass.AcceptsReturn = true;
             this.txtPass.Location = new System.Drawing.Point(278, 446);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(154, 22);
             this.txtPass.TabIndex = 13;
-            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown_1);
             // 
             // lbUser
             // 
@@ -187,12 +189,22 @@ namespace Sprint6_Pellitero_Carles
             this.label3.TabIndex = 15;
             this.label3.Text = "Password:";
             // 
+            // info
+            // 
+            this.info.AutoSize = true;
+            this.info.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.info.Location = new System.Drawing.Point(179, 504);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(0, 21);
+            this.info.TabIndex = 16;
+            // 
             // Keypad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1733, 894);
+            this.Controls.Add(this.info);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbUser);
             this.Controls.Add(this.txtPass);
@@ -235,6 +247,7 @@ namespace Sprint6_Pellitero_Carles
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbUser;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label info;
     }
 }
 

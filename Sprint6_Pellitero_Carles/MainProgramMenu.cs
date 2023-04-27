@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ScreensProgram;
 
 namespace Sprint6_Pellitero_Carles
 {
-    public partial class MainMenu : Form
+    public partial class MainProgramMenu : Form
     {
-        public MainMenu()
+        public MainProgramMenu()
         {
             InitializeComponent();
         }
@@ -58,7 +51,7 @@ namespace Sprint6_Pellitero_Carles
             //Con un timer ir validando
             DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
 
-            if (when < DateTime.UtcNow.AddMinutes(-5))
+            if (when < DateTime.UtcNow.AddMinutes(-1)) //5
             {
                 Delay.Stop();
                 valido = false;
@@ -87,11 +80,6 @@ namespace Sprint6_Pellitero_Carles
         private void title_Click(object sender, EventArgs e)
         {
             ObrirQrGenerator();
-        }
-
-        private void btnOpcion1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        }        
     }
 }

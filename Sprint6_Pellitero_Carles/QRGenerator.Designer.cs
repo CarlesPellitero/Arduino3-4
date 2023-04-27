@@ -42,7 +42,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.tbxLogin.AcceptsReturn = true;
             this.tbxLogin.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxLogin.Location = new System.Drawing.Point(237, 182);
+            this.tbxLogin.Location = new System.Drawing.Point(127, 117);
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(164, 28);
             this.tbxLogin.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Sprint6_Pellitero_Carles
             // tbxUser
             // 
             this.tbxUser.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUser.Location = new System.Drawing.Point(461, 182);
+            this.tbxUser.Location = new System.Drawing.Point(351, 117);
             this.tbxUser.Name = "tbxUser";
             this.tbxUser.ReadOnly = true;
             this.tbxUser.Size = new System.Drawing.Size(468, 28);
@@ -62,7 +62,7 @@ namespace Sprint6_Pellitero_Carles
             // tbxInfo
             // 
             this.tbxInfo.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxInfo.Location = new System.Drawing.Point(237, 248);
+            this.tbxInfo.Location = new System.Drawing.Point(164, 221);
             this.tbxInfo.MaxLength = 100;
             this.tbxInfo.Multiline = true;
             this.tbxInfo.Name = "tbxInfo";
@@ -71,7 +71,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             // btnGnQR
             // 
-            this.btnGnQR.Location = new System.Drawing.Point(963, 176);
+            this.btnGnQR.Location = new System.Drawing.Point(853, 111);
             this.btnGnQR.Name = "btnGnQR";
             this.btnGnQR.Size = new System.Drawing.Size(134, 35);
             this.btnGnQR.TabIndex = 3;
@@ -82,7 +82,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             // ptbQR
             // 
-            this.ptbQR.Location = new System.Drawing.Point(411, 541);
+            this.ptbQR.Location = new System.Drawing.Point(351, 524);
             this.ptbQR.Name = "ptbQR";
             this.ptbQR.Size = new System.Drawing.Size(373, 219);
             this.ptbQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -93,7 +93,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Death Star", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 23);
+            this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 22);
             this.label1.TabIndex = 5;
@@ -103,7 +103,7 @@ namespace Sprint6_Pellitero_Carles
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1135, 749);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ptbQR);
             this.Controls.Add(this.btnGnQR);
